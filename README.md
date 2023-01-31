@@ -4,16 +4,16 @@
 
 ## M365
 
-[SPFx](M365/SPFx/Readme.md)
+[SPFx](./M365/SPFx/Readme.md)
 
-[PnP](M365/PnP/Readme.md)
+[PnP](./M365/PnP/Readme.md)
 
-[PowerShell](M365/PowerShell/Readme.md)
+[PowerShell](./M365/PowerShell/Readme.md)
 
 ## OnPrem
 
-[SPFx](onPrem/SPFx/Readme.md)
+[SPFx](./onPrem/SPFx/Readme.md)
 
-[PnP](onPrem/PnP/Readme.md)
+[PnP](./onPrem/PnP/Readme.md)
 
-[PowerShell](onPrem/PowerShell/Readme.md)
+[PowerShell](./onPrem/PowerShell/Readme.md)
