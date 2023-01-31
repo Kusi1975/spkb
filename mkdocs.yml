@@ -16,8 +16,8 @@ nav:
   - PowerPlatform: 
     - PowerPlatform: PowerPlatform/index.md
   - About: 
-    - Links: About/links.md
     - About: About/index.md
+    - Links: About/links.md
 
 theme:
   name: 'material'

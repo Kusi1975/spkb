@@ -4,7 +4,9 @@
 
 ### Close Connection to reconnect with another user
 
+```url
 https:<>/_layouts/closeConnection.aspx?loginasanotheruser=true
+```
 
 ### App Launcher
 
@@ -12,4 +14,8 @@ https:<>/_layouts/closeConnection.aspx?loginasanotheruser=true
 Enable-SPFeature -identity CustomTiles
 ```
 
-Edit List on https:<>/Lists/Custom Tiles
+Edit List on
+
+```url
+https:<>/Lists/Custom Tiles
+```

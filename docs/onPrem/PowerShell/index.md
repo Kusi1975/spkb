@@ -12,7 +12,6 @@ Get-SPContentDatabase |% { Upgrade-SPContentDatabase -Identity $_.Id -Confirm:$f
 
 ```powershell
 $wa = Get-SPWebApplication -IncludeCentralAdministration | Where { $_.DefaultServerComment -eq "SharePoint Central Administration v4"}
-
 Get-SPContentDatabase -WebApplication $wa |% { Upgrade-SPContentDatabase -Identity $_.Id -Confirm:$false }
 ```
 
