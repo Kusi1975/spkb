@@ -1,19 +1,34 @@
-# Kusi's Knowledge Base
+# Kusi's Knowledgebase
 
-## PowerPlatform
+## MkDocs
 
-## M365
+### Installation
 
-[SPFx](./M365/SPFx/README.md)
+[Install Python](https://www.python.org/downloads)
 
-[PnP](./M365/PnP/README.md)
+[Install MkDocs](https://www.mkdocs.org/getting-started)
 
-[PowerShell](./M365/PowerShell/README.md)
+```cmd
+py -m pip install --upgrade pip
+SET PATH=%PATH%;C:\Users\<User>\AppData\Local\Programs\Python\Python311\Scripts
+pip install mkdocs
+pip install mkdocs-material
+```
 
-## OnPrem
+### Edit
 
-[SPFx](./onPrem/SPFx/README.md)
+The Page is available on http://127.0.0.1:8000/ 
 
-[PnP](./onPrem/PnP/README.md)
+```cmd
+mkdocs serve
+```
 
-[PowerShell](./onPrem/PowerShell/README.md)
+### Publish
+
+The Page is available on:
+
+```cmd
+https://<gitname>.github.io/<repo>
+
+mkdocs gh-deploy
+```
