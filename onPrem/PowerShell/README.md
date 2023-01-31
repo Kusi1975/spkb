@@ -1,5 +1,5 @@
 ## Kusi's Knowledge Base
 
-[Home](../../Readme.md)
+[Home](../../README.md)
 
 # OnPrem PowerShell
