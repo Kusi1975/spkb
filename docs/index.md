@@ -18,7 +18,9 @@ This blog is a collection of useful things that I need in everyday work from tim
 
 [PowerShell](./M365/PowerShell/index.md)
 
-## OnPrem
+## SP2016/2019
+
+[SharePoint](./onPrem/SP/index.md)
 
 [SPFx](./onPrem/SPFx/index.md)
 

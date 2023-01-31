@@ -1,6 +1,6 @@
 # Kusi's Knowledge Base
 
-## OnPrem SharePoint
+## SharePoint 2016 / 2019
 
 ### Close Connection to reconnect with another user
 
