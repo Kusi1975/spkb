@@ -5,7 +5,7 @@
 ### gulp serve with localizaion
 
 ```powershell
-Gulp serve --locale de-de
+gulp serve --locale de-de
 ```
 
 ### gulp dist for SP2016/19
