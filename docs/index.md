@@ -2,6 +2,12 @@
 
 This blog is a collection of useful things that I need in everyday work from time to time and maybe can help someone else.
 
+![Portrait](./assets/sp.png)
+![Portrait](./assets/pnp.png)
+![Portrait](./assets/spfx.png)
+![Portrait](./assets/m365.png)
+![Portrait](./assets/pp.png)
+
 ## PowerPlatform
 
 ## M365
