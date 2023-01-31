@@ -207,7 +207,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../SharePoint/index.md" class="md-tabs__link md-tabs__link--active">
         OnPrem
       </a>
     </li>
@@ -239,7 +239,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../About/" class="md-tabs__link">
+      <a href="../../About/links/" class="md-tabs__link">
         About
       </a>
     </li>
@@ -422,6 +422,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../SharePoint/index.md" class="md-nav__link">
+        SharePoint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -461,6 +475,33 @@
   <a href="#onprem-pnp" class="md-nav__link">
     OnPrem PnP
   </a>
+  
+    <nav class="md-nav" aria-label="OnPrem PnP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-pnp-module" class="md-nav__link">
+    Install PnP Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-pnp-module" class="md-nav__link">
+    Update PnP Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-pnp-module" class="md-nav__link">
+    Get PnP Module
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -591,6 +632,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../About/links/" class="md-nav__link">
+        Links
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../About/" class="md-nav__link">
         About
       </a>
@@ -636,6 +691,33 @@
     OnPrem PnP
   </a>
   
+    <nav class="md-nav" aria-label="OnPrem PnP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-pnp-module" class="md-nav__link">
+    Install PnP Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-pnp-module" class="md-nav__link">
+    Update PnP Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-pnp-module" class="md-nav__link">
+    Get PnP Module
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -659,6 +741,15 @@
 
 <h1 id="kusis-knowledge-base">Kusi's Knowledge Base<a class="headerlink" href="#kusis-knowledge-base" title="Permanent link">&para;</a></h1>
 <h2 id="onprem-pnp">OnPrem PnP<a class="headerlink" href="#onprem-pnp" title="Permanent link">&para;</a></h2>
+<h3 id="install-pnp-module">Install PnP Module<a class="headerlink" href="#install-pnp-module" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Install-Module</span> <span class="n">SharePointPnPPowerShell2016</span>
+</code></pre></div>
+<h3 id="update-pnp-module">Update PnP Module<a class="headerlink" href="#update-pnp-module" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Update-Module</span> <span class="n">SharePointPnPPowerShell</span><span class="p">*</span>
+</code></pre></div>
+<h3 id="get-pnp-module">Get PnP Module<a class="headerlink" href="#get-pnp-module" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Get-Module</span> <span class="n">SharePointPnPPowerShell</span><span class="p">*</span> <span class="n">-ListAvailable</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span><span class="n">Version</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">Version</span> <span class="n">-Descending</span>
+</code></pre></div>
 
 
 
