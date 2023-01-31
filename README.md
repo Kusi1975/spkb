@@ -1,5 +1,7 @@
 # Kusi's Knowledgebase
 
+[Kusi's Knowledgebase](https://kusi1975.github.io/spkb/)
+
 ## MkDocs
 
 ### Installation
@@ -7,6 +9,8 @@
 [Install Python](https://www.python.org/downloads)
 
 [Install MkDocs](https://www.mkdocs.org/getting-started)
+
+[Install Material for MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started)
 
 ```cmd
 py -m pip install --upgrade pip
