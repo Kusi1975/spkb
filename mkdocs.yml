@@ -9,12 +9,14 @@ nav:
     - SPFx: M365/SPFx/index.md
     - PowerShell: M365/PowerShell/index.md
   - OnPrem: 
+    - SharePoint: onPrem/SharePoint/index.md
     - PnP: onPrem/PnP/index.md
     - SPFx: onPrem/SPFx/index.md
     - PowerShell: onPrem/PowerShell/index.md
   - PowerPlatform: 
     - PowerPlatform: PowerPlatform/index.md
   - About: 
+    - Links: About/links.md
     - About: About/index.md
 
 theme:
