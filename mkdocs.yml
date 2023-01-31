@@ -26,8 +26,8 @@ theme:
     - navigation.tabs.sticky    
     - navigation.path
   palette:
-    primary: 'indigo'
-    accent: 'indigo'
+    primary: 'blue'
+    accent: 'blue'
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
