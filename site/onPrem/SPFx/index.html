@@ -207,7 +207,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../PnP/" class="md-tabs__link md-tabs__link--active">
+      <a href="../SP/" class="md-tabs__link md-tabs__link--active">
         OnPrem
       </a>
     </li>
@@ -239,7 +239,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../About/" class="md-tabs__link">
+      <a href="../../About/links/" class="md-tabs__link">
         About
       </a>
     </li>
@@ -424,6 +424,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../SP/" class="md-nav__link">
+        SharePoint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../PnP/" class="md-nav__link">
         PnP
       </a>
@@ -475,6 +489,26 @@
   <a href="#onprem-spfx" class="md-nav__link">
     OnPrem SPFx
   </a>
+  
+    <nav class="md-nav" aria-label="OnPrem SPFx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gulp-serve-with-localizaion" class="md-nav__link">
+    gulp serve with localizaion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gulp-dist-for-sp201619" class="md-nav__link">
+    gulp dist for SP2016/19
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -591,6 +625,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../About/links/" class="md-nav__link">
+        Links
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../About/" class="md-nav__link">
         About
       </a>
@@ -636,6 +684,26 @@
     OnPrem SPFx
   </a>
   
+    <nav class="md-nav" aria-label="OnPrem SPFx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gulp-serve-with-localizaion" class="md-nav__link">
+    gulp serve with localizaion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gulp-dist-for-sp201619" class="md-nav__link">
+    gulp dist for SP2016/19
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -659,6 +727,36 @@
 
 <h1 id="kusis-knowledge-base">Kusi's Knowledge Base<a class="headerlink" href="#kusis-knowledge-base" title="Permanent link">&para;</a></h1>
 <h2 id="onprem-spfx">OnPrem SPFx<a class="headerlink" href="#onprem-spfx" title="Permanent link">&para;</a></h2>
+<h3 id="gulp-serve-with-localizaion">gulp serve with localizaion<a class="headerlink" href="#gulp-serve-with-localizaion" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Gulp</span> <span class="n">serve</span> <span class="p">-</span><span class="n">-locale</span> <span class="n">de-de</span>
+</code></pre></div>
+<h3 id="gulp-dist-for-sp201619">gulp dist for SP2016/19<a class="headerlink" href="#gulp-dist-for-sp201619" title="Permanent link">&para;</a></h3>
+<p>gulp dist replace the steps:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">gulp</span> <span class="n">clean</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">gulp</span> <span class="n">build</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">gulp</span> <span class="n">bundle</span> <span class="p">-</span><span class="n">-ship</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">gulp</span> <span class="n">package-solution</span> <span class="p">-</span><span class="n">-ship</span>
+</code></pre></div>
+<p>Install gulp-sequence</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">npm</span> <span class="n">install</span> <span class="n">gulp-sequence</span> <span class="p">-</span><span class="n">-save-dev</span>
+</code></pre></div>
+<p>edit file gulpfile.js</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">if</span> <span class="p">(</span><span class="k">process</span><span class="p">.</span><span class="n">argv</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s1">&#39;dist&#39;</span><span class="p">)</span> <span class="p">!==</span> <span class="p">-</span><span class="n">1</span><span class="p">){</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">process</span><span class="p">.</span><span class="n">argv</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="s1">&#39;--ship&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">const</span> <span class="n">gulp</span> <span class="p">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">const</span> <span class="n">build</span> <span class="p">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;@microsoft/sp-build-web&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">const</span> <span class="n">gulpSequence</span> <span class="p">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;gulp-sequence&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="n">build</span><span class="p">.</span><span class="n">addSuppression</span><span class="p">(`</span><span class="n">Warning</span> <span class="p">-</span> <span class="no">[sass]</span> <span class="n">The</span> <span class="n">local</span> <span class="n">CSS</span> <span class="n">class</span> <span class="s1">&#39;ms-Grid&#39;</span> <span class="n">is</span> <span class="n">not</span> <span class="n">camelCase</span> <span class="n">and</span> <span class="n">will</span> <span class="n">not</span> <span class="n">be</span> <span class="n">type-safe</span><span class="p">.`);</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">gulp</span><span class="p">.</span><span class="n">task</span><span class="p">(</span><span class="s1">&#39;dist&#39;</span><span class="p">,</span> <span class="n">gulpSequence</span><span class="p">(</span><span class="s1">&#39;clean&#39;</span><span class="p">,</span> <span class="s1">&#39;bundle&#39;</span><span class="p">,</span> <span class="s1">&#39;package-solution&#39;</span><span class="p">));</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">build</span><span class="p">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">gulp</span><span class="p">);</span>
+</code></pre></div>
 
 
 

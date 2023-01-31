@@ -207,7 +207,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../PnP/" class="md-tabs__link md-tabs__link--active">
+      <a href="../SP/" class="md-tabs__link md-tabs__link--active">
         OnPrem
       </a>
     </li>
@@ -239,7 +239,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../About/" class="md-tabs__link">
+      <a href="../../About/links/" class="md-tabs__link">
         About
       </a>
     </li>
@@ -424,6 +424,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../SP/" class="md-nav__link">
+        SharePoint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../PnP/" class="md-nav__link">
         PnP
       </a>
@@ -489,6 +503,47 @@
   <a href="#onprem-powershell" class="md-nav__link">
     OnPrem PowerShell
   </a>
+  
+    <nav class="md-nav" aria-label="OnPrem PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-content-database" class="md-nav__link">
+    Update Content Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-ca-content-database" class="md-nav__link">
+    Update CA Content Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-developer-certificate" class="md-nav__link">
+    New Developer Certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system" class="md-nav__link">
+    Error: cannot be loaded because running scripts is disabled on this System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-all-loaded-assemblies-in-powershell" class="md-nav__link">
+    Get all loaded Assemblies in Powershell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -591,6 +646,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../About/links/" class="md-nav__link">
+        Links
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../About/" class="md-nav__link">
         About
       </a>
@@ -636,6 +705,47 @@
     OnPrem PowerShell
   </a>
   
+    <nav class="md-nav" aria-label="OnPrem PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-content-database" class="md-nav__link">
+    Update Content Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-ca-content-database" class="md-nav__link">
+    Update CA Content Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-developer-certificate" class="md-nav__link">
+    New Developer Certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system" class="md-nav__link">
+    Error: cannot be loaded because running scripts is disabled on this System
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-all-loaded-assemblies-in-powershell" class="md-nav__link">
+    Get all loaded Assemblies in Powershell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -659,6 +769,29 @@
 
 <h1 id="kusis-knowledge-base">Kusi's Knowledge Base<a class="headerlink" href="#kusis-knowledge-base" title="Permanent link">&para;</a></h1>
 <h2 id="onprem-powershell">OnPrem PowerShell<a class="headerlink" href="#onprem-powershell" title="Permanent link">&para;</a></h2>
+<h3 id="update-content-database">Update Content Database<a class="headerlink" href="#update-content-database" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Get-SPContentDatabase</span> <span class="p">|%</span> <span class="p">{</span> <span class="n">Upgrade-SPContentDatabase</span> <span class="n">-Identity</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Id</span> <span class="n">-Confirm</span><span class="p">:</span><span class="nv">$false</span> <span class="p">}</span>
+</code></pre></div>
+<h3 id="update-ca-content-database">Update CA Content Database<a class="headerlink" href="#update-ca-content-database" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$wa</span> <span class="p">=</span> <span class="nb">Get-SPWebApplication</span> <span class="n">-IncludeCentralAdministration</span> <span class="p">|</span> <span class="nb">Where </span><span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">DefaultServerComment</span> <span class="o">-eq</span> <span class="s2">&quot;SharePoint Central Administration v4&quot;</span><span class="p">}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">Get-SPContentDatabase</span> <span class="n">-WebApplication</span> <span class="nv">$wa</span> <span class="p">|%</span> <span class="p">{</span> <span class="n">Upgrade-SPContentDatabase</span> <span class="n">-Identity</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Id</span> <span class="n">-Confirm</span><span class="p">:</span><span class="nv">$false</span> <span class="p">}</span>
+</code></pre></div>
+<h3 id="new-developer-certificate">New Developer Certificate<a class="headerlink" href="#new-developer-certificate" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Import-Module</span> <span class="n">WebAdministration</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Set-Location</span> <span class="n">IIS</span><span class="p">:\</span><span class="n">SslBindings</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">New-WebBinding</span> <span class="n">-Name</span> <span class="s2">&quot;Default Web Site&quot;</span> <span class="n">-IP</span> <span class="s2">&quot;*&quot;</span> <span class="n">-Port</span> <span class="n">443</span> <span class="n">-Protocol</span> <span class="n">https</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nv">$c</span> <span class="p">=</span> <span class="nb">New-SelfSignedCertificate</span> <span class="n">-DnsName</span> <span class="p">*.</span><span class="n">myexample</span><span class="p">.</span><span class="n">com</span><span class="p">,*.</span><span class="n">my</span><span class="p">.</span><span class="n">com</span> <span class="n">-CertStoreLocation</span> <span class="n">cert</span><span class="p">:\</span><span class="n">LocalMachine</span><span class="p">\</span><span class="n">My</span>
+</code></pre></div>
+<p>Open mmc.exe and add Server Certificate</p>
+<p>Copy New Certificate from Personal to Trusted Root Certifiaction Authorities</p>
+<p>Open IIS and change the Binding Certificate</p>
+<h3 id="error-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system">Error: cannot be loaded because running scripts is disabled on this System<a class="headerlink" href="#error-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">Unrestricted</span>
+</code></pre></div>
+<h3 id="get-all-loaded-assemblies-in-powershell">Get all loaded Assemblies in Powershell<a class="headerlink" href="#get-all-loaded-assemblies-in-powershell" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="no">[System.AppDomain]</span><span class="p">::</span><span class="n">CurrentDomain</span><span class="p">.</span><span class="n">GetAssemblies</span><span class="p">()</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="n">Location</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="n">FullName</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-Property</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Location</span><span class="p">,</span> <span class="n">Version</span> <span class="p">|</span> <span class="nb">Out-GridView</span>
+</code></pre></div>
 
 
 
