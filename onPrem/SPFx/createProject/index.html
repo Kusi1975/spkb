@@ -747,38 +747,40 @@
 <p>After that you will be asked what you want to create, the following is your choice.</p>
 <h4 id="webpart-sp2016-sp2019-online">WebPart (SP2016, SP2019, Online)<a class="headerlink" href="#webpart-sp2016-sp2019-online" title="Permanent link">&para;</a></h4>
 <p>These WebParts are available in both Classic and Modern design.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Tip: There shouldn&#39;t be more than 10 WebParts in a package, because the creation gets slower and slower and from 10 it gets noticeably slower and makes debugging a bit more cumbersome. In business it doesn&#39;t matter.
-</code></pre></div>
+<pre>
+Tip: There shouldn't be more than 10 WebParts in a package, because the creation gets slower and slower and from 10 it gets noticeably slower and makes debugging a bit more cumbersome. In business it doesn't matter.
+</pre>
+
 <h4 id="extension-sp2019-online">Extension (SP2019, Online)<a class="headerlink" href="#extension-sp2019-online" title="Permanent link">&para;</a></h4>
 <p>With Extension, components in Modern Page can be placed at predefined zones such as headers or footers. For example, you can render your own navigation or footer on all Modern Sites.</p>
 <h4 id="library-online">Library (Online)<a class="headerlink" href="#library-online" title="Permanent link">&para;</a></h4>
 <p>The Library option is available online, with which only released code can be referenced.</p>
 <h3 id="build-project">Build project<a class="headerlink" href="#build-project" title="Permanent link">&para;</a></h3>
 <p>The developer certificate must be installed for the first time:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">gulp</span> <span class="n">trust-dev-cert</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">gulp</span> <span class="n">trust-dev-cert</span>
 </code></pre></div>
 <p>If something went wrong with the installation of the developer certificate, this can be reversed and then installed again:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">gulp</span> <span class="n">untrust-dev-cert</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">gulp</span> <span class="n">trust-dev-cert</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">gulp</span> <span class="n">untrust-dev-cert</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">gulp</span> <span class="n">trust-dev-cert</span>
 </code></pre></div>
 <p>A package can be created with the following commands:</p>
 <p>Debug:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">gulp</span> <span class="n">clean</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">gulp</span> <span class="n">bundle</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">gulp</span> <span class="n">package-solution</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">gulp</span> <span class="n">clean</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">gulp</span> <span class="n">bundle</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">gulp</span> <span class="n">package-solution</span>
 </code></pre></div>
 <p>Release:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">gulp</span> <span class="n">clean</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">gulp</span> <span class="n">bundle</span> <span class="p">-</span><span class="n">-ship</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">gulp</span> <span class="n">package-solution</span> <span class="p">-</span><span class="n">-ship</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">gulp</span> <span class="n">clean</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">gulp</span> <span class="n">bundle</span> <span class="p">-</span><span class="n">-ship</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">gulp</span> <span class="n">package-solution</span> <span class="p">-</span><span class="n">-ship</span>
 </code></pre></div>
 <p>The package is then available under the <b>&lt;Project path&gt;</b>\sharepoint\solution folder.</p>
 <h3 id="debug-project">Debug project<a class="headerlink" href="#debug-project" title="Permanent link">&para;</a></h3>
 <p>A service is started locally with the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">gulp</span> <span class="n">serve</span> <span class="p">-</span><span class="n">-nobrowser</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">gulp</span> <span class="n">serve</span> <span class="p">-</span><span class="n">-nobrowser</span>
 </code></pre></div>
 <p>Depending on the language, debugging can be done with locale:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">gulp</span> <span class="n">serve</span> <span class="err">–</span><span class="n">-nobrowser</span> <span class="p">-</span><span class="n">-locale</span> <span class="n">de-de</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">gulp</span> <span class="n">serve</span> <span class="err">–</span><span class="n">-nobrowser</span> <span class="p">-</span><span class="n">-locale</span> <span class="n">de-de</span>
 </code></pre></div>
 <p>The current version of the directory under which the command was called is then available under the workbench link <b>/_layouts/15/workbench.aspx</b>. The workbench link can be appended behind any site url e.g.: <a href="https://mysp.microsoft.com/sites/News/_layouts/15/workbench.aspx">https://mysp.microsoft.com/sites/News/_layouts/15/workbench.aspx</a> in this example all lists, fields etc. are available to you which available at web <a href="https://mysp.microsoft.com/sites/News">https://mysp.microsoft.com/sites/News</a>, but the code is the local unminified code.</p>
 <h3 id="create-app-catalog">Create App Catalog<a class="headerlink" href="#create-app-catalog" title="Permanent link">&para;</a></h3>
