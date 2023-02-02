@@ -10,8 +10,7 @@ Make the red text changes to the 2016 solution and rebuild.
 
 #### config/config.json
 
-<pre><code>
-{
+<pre><code>{
   <span style='color:red'>"$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
   "bundles": {
@@ -28,38 +27,30 @@ Make the red text changes to the 2016 solution and rebuild.
   "externals": {},
   "localizedResources": {
     "HelloWorldWebPartStrings": "<span style='color:red'>lib/</span>webparts/helloWorld/loc/{locale}.js"
-...
-</code></pre>
+...</code></pre>
 
 #### config/package-solution.json
 
-<pre><code>
-...
+<pre><code>...
 "version": "1.0.0.0",
 <span style='color:red'>"includeClientSideAssets": true</span>
-...
-</code></pre>
+...</code></pre>
 
 #### config/write-manifest.json
 
-<pre><code>
-...
+<pre><code>...
 "cdnBasePath": <span style='color:red'>"&lt;!-- PATH TO CDN --&gt;"</span>
-...
-</code></pre>
+...</code></pre>
 
 #### .yo-rc.json
 
-<pre><code>
-...
+<pre><code>...
 "environment": "onprem<span style='color:red'>19</span>"
-...
-</code></pre>
+...</code></pre>
 
 #### package.json
 
-<pre><code>
-...
+<pre><code>...
 "dependencies": {
     "react": "<span style='color:red'>15.6.2</span>",
     "react-dom": "<span style='color:red'>15.6.2</span>",
@@ -81,13 +72,11 @@ Make the red text changes to the 2016 solution and rebuild.
     "@microsoft/sp-build-web": "<span style='color:red'>~1.4.1</span>",
     "@microsoft/sp-module-interfaces": "<span style='color:red'>~1.4.1</span>",
     "@microsoft/sp-webpart-workbench": "<span style='color:red'>~1.4.1</span>",
-...
-</code></pre>
+...</code></pre>
 
 #### tsconfig.json
 
-<pre><code>
-...
+<pre><code>...
     "module": <span style='color:red'><s>"commonjs"</s>"esnext",
     "moduleResolution": "node",</span>
 ...
@@ -95,13 +84,11 @@ Make the red text changes to the 2016 solution and rebuild.
       "./node_modules/@types"<span style='color:red'>,
       "./node_modules/@microsoft"</span>
     ],
-...
-</code></pre>
+...</code></pre>
 
 #### gulpfile.js
 
-<pre><code>
-...
+<pre><code>...
 const gulpSequence = require('gulp-sequence');
 <span style='color:red'>const del = require('del');
 
@@ -110,15 +97,12 @@ gulp.task('cleanup', function(){
 });</span>
 ...
 gulp.task('dist', gulpSequence('clean', <span style='color:red'>'cleanup',</span> 'bundle', 'package-solution'));
-...
-</code></pre>
+...</code></pre>
 
 #### README.md
 
-<pre><code>
-## sp-20<span style='color:red'>19</span>
-...
-</code></pre>
+<pre><code>## sp-20<span style='color:red'>19</span>
+...</code></pre>
 
 ### Navigation
 
