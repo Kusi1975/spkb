@@ -10,7 +10,7 @@ Make the red text changes to the 2016 solution and rebuild.
 
 #### config/config.json
 
-<pre>
+<pre><code>
 {
   <span style='color:red'>"$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
@@ -29,36 +29,36 @@ Make the red text changes to the 2016 solution and rebuild.
   "localizedResources": {
     "HelloWorldWebPartStrings": "<span style='color:red'>lib/</span>webparts/helloWorld/loc/{locale}.js"
 ...
-</pre>
+</code></pre>
 
 #### config/package-solution.json
 
-<pre>
+<pre><code>
 ...
 "version": "1.0.0.0",
 <span style='color:red'>"includeClientSideAssets": true</span>
 ...
-</pre>
+</code></pre>
 
 #### config/write-manifest.json
 
-<pre>
+<pre><code>
 ...
 "cdnBasePath": <span style='color:red'>"&lt;!-- PATH TO CDN --&gt;"</span>
 ...
-</pre>
+</code></pre>
 
 #### .yo-rc.json
 
-<pre>
+<pre><code>
 ...
 "environment": "onprem<span style='color:red'>19</span>"
 ...
-</pre>
+</code></pre>
 
 #### package.json
 
-<pre>
+<pre><code>
 ...
 "dependencies": {
     "react": "<span style='color:red'>15.6.2</span>",
@@ -82,11 +82,11 @@ Make the red text changes to the 2016 solution and rebuild.
     "@microsoft/sp-module-interfaces": "<span style='color:red'>~1.4.1</span>",
     "@microsoft/sp-webpart-workbench": "<span style='color:red'>~1.4.1</span>",
 ...
-</pre>
+</code></pre>
 
 #### tsconfig.json
 
-<pre>
+<pre><code>
 ...
     "module": <span style='color:red'><s>"commonjs"</s>"esnext",
     "moduleResolution": "node",</span>
@@ -96,11 +96,11 @@ Make the red text changes to the 2016 solution and rebuild.
       "./node_modules/@microsoft"</span>
     ],
 ...
-</pre>
+</code></pre>
 
 #### gulpfile.js
 
-<pre>
+<pre><code>
 ...
 const gulpSequence = require('gulp-sequence');
 <span style='color:red'>const del = require('del');
@@ -111,14 +111,14 @@ gulp.task('cleanup', function(){
 ...
 gulp.task('dist', gulpSequence('clean', <span style='color:red'>'cleanup',</span> 'bundle', 'package-solution'));
 ...
-</pre>
+</code></pre>
 
 #### README.md
 
-<pre>
+<pre><code>
 ## sp-20<span style='color:red'>19</span>
 ...
-</pre>
+</code></pre>
 
 ### Navigation
 

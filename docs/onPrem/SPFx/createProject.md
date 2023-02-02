@@ -30,9 +30,9 @@ After that you will be asked what you want to create, the following is your choi
 
 These WebParts are available in both Classic and Modern design.
 
-```remark
+<pre style='white-space: unset; background-color: var(--md-code-bg-color); padding: 10px 16px;'>
 Tip: There shouldn't be more than 10 WebParts in a package, because the creation gets slower and slower and from 10 it gets noticeably slower and makes debugging a bit more cumbersome. In business it doesn't matter.
-```
+</pre>
 
 #### Extension (SP2019, Online)
 

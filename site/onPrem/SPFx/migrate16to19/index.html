@@ -724,7 +724,7 @@
 <h3 id="file-customizations">File Customizations<a class="headerlink" href="#file-customizations" title="Permanent link">&para;</a></h3>
 <p>Make the red text changes to the 2016 solution and rebuild.</p>
 <h4 id="configconfigjson">config/config.json<a class="headerlink" href="#configconfigjson" title="Permanent link">&para;</a></h4>
-<pre>
+<pre><code>
 {
   <span style='color:red'>"$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
   "version": "2.0",
@@ -743,32 +743,32 @@
   "localizedResources": {
     "HelloWorldWebPartStrings": "<span style='color:red'>lib/</span>webparts/helloWorld/loc/{locale}.js"
 ...
-</pre>
+</code></pre>
 
 <h4 id="configpackage-solutionjson">config/package-solution.json<a class="headerlink" href="#configpackage-solutionjson" title="Permanent link">&para;</a></h4>
-<pre>
+<pre><code>
 ...
 "version": "1.0.0.0",
 <span style='color:red'>"includeClientSideAssets": true</span>
 ...
-</pre>
+</code></pre>
 
 <h4 id="configwrite-manifestjson">config/write-manifest.json<a class="headerlink" href="#configwrite-manifestjson" title="Permanent link">&para;</a></h4>
-<pre>
+<pre><code>
 ...
 "cdnBasePath": <span style='color:red'>"&lt;!-- PATH TO CDN --&gt;"</span>
 ...
-</pre>
+</code></pre>
 
 <h4 id="yo-rcjson">.yo-rc.json<a class="headerlink" href="#yo-rcjson" title="Permanent link">&para;</a></h4>
-<pre>
+<pre><code>
 ...
 "environment": "onprem<span style='color:red'>19</span>"
 ...
-</pre>
+</code></pre>
 
 <h4 id="packagejson">package.json<a class="headerlink" href="#packagejson" title="Permanent link">&para;</a></h4>
-<pre>
+<pre><code>
 ...
 "dependencies": {
     "react": "<span style='color:red'>15.6.2</span>",
@@ -792,10 +792,10 @@
     "@microsoft/sp-module-interfaces": "<span style='color:red'>~1.4.1</span>",
     "@microsoft/sp-webpart-workbench": "<span style='color:red'>~1.4.1</span>",
 ...
-</pre>
+</code></pre>
 
 <h4 id="tsconfigjson">tsconfig.json<a class="headerlink" href="#tsconfigjson" title="Permanent link">&para;</a></h4>
-<pre>
+<pre><code>
 ...
     "module": <span style='color:red'><s>"commonjs"</s>"esnext",
     "moduleResolution": "node",</span>
@@ -805,10 +805,10 @@
       "./node_modules/@microsoft"</span>
     ],
 ...
-</pre>
+</code></pre>
 
 <h4 id="gulpfilejs">gulpfile.js<a class="headerlink" href="#gulpfilejs" title="Permanent link">&para;</a></h4>
-<pre>
+<pre><code>
 ...
 const gulpSequence = require('gulp-sequence');
 <span style='color:red'>const del = require('del');
@@ -819,13 +819,13 @@ gulp.task('cleanup', function(){
 ...
 gulp.task('dist', gulpSequence('clean', <span style='color:red'>'cleanup',</span> 'bundle', 'package-solution'));
 ...
-</pre>
+</code></pre>
 
 <h4 id="readmemd">README.md<a class="headerlink" href="#readmemd" title="Permanent link">&para;</a></h4>
-<pre>
+<pre><code>
 ## sp-20<span style='color:red'>19</span>
 ...
-</pre>
+</code></pre>
 
 <h3 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permanent link">&para;</a></h3>
 <p><a href="../intro/">Introduction</a></p>
