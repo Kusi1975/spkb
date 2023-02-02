@@ -1,5 +1,21 @@
 # Kusi's SPFx Knowledgebase
 
+## Introduction
+
+> [Introduction](intro.md)
+
+## Development environment
+
+> [Development environment](devenv.md)
+
+## Create a new project
+
+> [Create a new project](createProject.md)
+
+## Project structure
+
+> [Project structure](projectStructure.md)
+
 ## Migrate SPFx 2016 to 2019
 
 To migrate an SPFx package from 2016 to 2019, adjustments to certain files are necessary, after which only the package should be available instead of the old packages with the necessary JS files.
@@ -103,15 +119,3 @@ gulp.task('dist', gulpSequence('clean', <span style='color:red'>'cleanup',</span
 
 <pre><code>## sp-20<span style='color:red'>19</span>
 ...</code></pre>
-
-### Navigation
-
-[Introduction](intro.md)
-
-[Development environment](devenv.md)
-
-[Create a new project](createProject.md)
-
-[Project structure](projectStructure.md)
-
-[Migrate SPFx 2016 to 2019](migrate16to19.md)

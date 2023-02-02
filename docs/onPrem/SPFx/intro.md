@@ -19,14 +19,18 @@ SPFx Version 1.1.0 is supplied with SharePoint Feature Pack 2 (corresponds to CU
 |Gulp|4.x|4.x|4.x|
 |@microsoft/generator-sharepoint|1.16.1|1.16.1|1.16.1|
 
-### Navigation
+## Development environment
 
-[Introduction](intro.md)
+> [Development environment](devenv.md)
 
-[Development environment](devenv.md)
+## Create a new project
 
-[Create a new project](createProject.md)
+> [Create a new project](createProject.md)
 
-[Project structure](projectStructure.md)
+## Project structure
 
-[Migrate SPFx 2016 to 2019](migrate16to19.md)
+> [Project structure](projectStructure.md)
+
+## Migrate SPFx 2016 to 2019
+
+> [Migrate SPFx 2016 to 2019](migrate16to19.md)

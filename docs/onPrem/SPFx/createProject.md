@@ -1,5 +1,13 @@
 # Kusi's SPFx Knowledgebase
 
+## Introduction
+
+> [Introduction](intro.md)
+
+## Development environment
+
+> [Development environment](devenv.md)
+
 ## Create a new project
 
 ### Create the project structure
@@ -117,14 +125,10 @@ With SP2016, the JavaScript files are still outside of the package, so a DocLib 
 
 From SP2019 the JavaScript files are included in the package. The package can be found under <b>&lt;Project path&gt;/sharepoint/solution</b>.
 
-### Navigation
+## Project structure
 
-[Introduction](intro.md)
+> [Project structure](projectStructure.md)
 
-[Development environment](devenv.md)
+## Migrate SPFx 2016 to 2019
 
-[Create a new project](createProject.md)
-
-[Project structure](projectStructure.md)
-
-[Migrate SPFx 2016 to 2019](migrate16to19.md)
+> [Migrate SPFx 2016 to 2019](migrate16to19.md)
