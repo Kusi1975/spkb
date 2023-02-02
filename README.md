@@ -21,7 +21,7 @@ pip install mkdocs-material
 
 ### Edit
 
-The Page is available on http://127.0.0.1:8000/ 
+The Page is available on <http://127.0.0.1:8000/>
 
 ```cmd
 mkdocs serve
@@ -31,8 +31,10 @@ mkdocs serve
 
 The Page is available on:
 
-```cmd
-https://<gitname>.github.io/<repo>
+<pre>
+https://<b>&lt;gitname&gt;</b>.github.io<b>/&lt;repo&gt;</b>
+</pre>
 
+```cmd
 mkdocs gh-deploy
 ```

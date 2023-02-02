@@ -1,6 +1,18 @@
-# Kusi's Knowledge Base
+# Kusi's Knowledgebase
 
 ## OnPrem SPFx
+
+### SPFx Introduction Manual
+
+[Introduction](intro.md)
+
+[Development environment](devenv.md)
+
+[Create a new project](createProject.md)
+
+[Project structure](projectStructure.md)
+
+[Migrate SPFx 2016 to 2019](migrate16to19.md)
 
 ### gulp serve with localizaion
 
@@ -44,3 +56,7 @@ gulp.task('dist', gulpSequence('clean', 'bundle', 'package-solution'));
 
 build.initialize(gulp);
 ```
+
+### UI Fabric Icons
+
+[https://uifabricicons.azurewebsites.net](https://uifabricicons.azurewebsites.net)
