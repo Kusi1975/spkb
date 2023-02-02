@@ -6,7 +6,7 @@
 
 A new project can be created with the Yeoman or another WebPart can be added to an existing project in the same way.
 
-Switch to the project folder in Powershell and call it up. Then select @microsoft/sharepoint as generator.
+Switch to the project folder in Powershell and call it up. Then select &#64;microsoft/sharepoint as generator.
 
 ![Yeoman](./assets/yeoman.png)
 
