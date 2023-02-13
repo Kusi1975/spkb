@@ -7,6 +7,11 @@ This blog is a collection of useful things that I need in everyday work from tim
 ![Portrait](./assets/spfx.png)
 ![Portrait](./assets/m365.png)
 ![Portrait](./assets/pp.png)
+![Portrait](./assets/azure.png)
+
+## Azure
+
+[VMs](./Azure/VMs/index.md)
 
 ## PowerPlatform
 

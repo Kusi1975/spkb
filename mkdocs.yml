@@ -4,6 +4,8 @@ site_author: 'Markus König'
 
 nav:
   - Home: index.md
+  - Azure: 
+    - VMs: Azure/VMs/index.md
   - M365: 
     - PnP: M365/PnP/index.md
     - SPFx: M365/SPFx/index.md
