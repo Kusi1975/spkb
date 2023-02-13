@@ -35,10 +35,6 @@ sfc.exe /scannow
 
 netsh.exe winhttp reset proxy
 
-$proxyAddress='<your proxy server>'
-$proxyBypassList='<your list of bypasses>;168.63.129.16'
-netsh.exe winhttp set proxy $proxyAddress $proxyBypassList
-
 diskpart.exe
 san policy=onlineall
 exit
@@ -177,6 +173,8 @@ Upload the VM with the MASE this create a Disk in Azure
 
 ![Microsoft Azure Storage Explorer](./assets/MASE.png)
 
+Change Type from "Premium SSD" to "Standard SSD"
+
 Open in Browser [Azure Portal](https://portal.azure.com)
 
 - Navigate to the Disk and Create a Virtual Computer on the Disk
@@ -202,6 +200,8 @@ In Azure:
 - Navigate to the Snapshot and create a Disk
 
 ![Create Disk](./assets/AzureDiskFromSnapshot.png)
+
+Change Type from "Premium SSD" to "Standard SSD"
 
 ![Create Disk](./assets/AzureCreateDisk.png)
 
