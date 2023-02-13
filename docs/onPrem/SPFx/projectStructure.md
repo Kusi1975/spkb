@@ -1,17 +1,5 @@
 # Kusi's SPFx Knowledgebase
 
-## Introduction
-
-> [Introduction](intro.md)
-
-## Development environment
-
-> [Development environment](devenv.md)
-
-## Create a new project
-
-> [Create a new project](createProject.md)
-
 ## Project structure
 
 ### Package configuration
@@ -280,7 +268,3 @@ export default class <WebPartName> extends React.Component<I<WebPartName>Props, 
   }
 }
 ```
-
-## Migrate SPFx 2016 to 2019
-
-> [Migrate SPFx 2016 to 2019](migrate16to19.md)

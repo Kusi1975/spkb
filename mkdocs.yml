@@ -13,7 +13,14 @@ nav:
   - OnPrem: 
     - SharePoint: onPrem/SP/index.md
     - PnP: onPrem/PnP/index.md
-    - SPFx: onPrem/SPFx/index.md
+    - SPFx:
+      - Tips: onPrem/SPFx/index.md
+      - Manual:
+        - Introduction: onPrem/SPFx/intro.md
+        - Development environment: onPrem/SPFx/devenv.md
+        - Create a new Project: onPrem/SPFx/createProject.md
+        - Project structure: onPrem/SPFx/projectStructure.md
+        - Migrate SPFx 2016 to 2019: onPrem/SPFx/migrate16to19.md
     - PowerShell: onPrem/PowerShell/index.md
   - PowerPlatform: 
     - PowerPlatform: PowerPlatform/index.md
