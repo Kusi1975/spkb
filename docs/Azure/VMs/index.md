@@ -1,8 +1,8 @@
 # Kusi's Knowledge Base
 
-## HyperV VM to Azure
+## Hyper-V VM to Azure
 
-### Convert VM with Hyper-V
+### Convert VM with Hyper-V Manager
 
 Open Hyper-V Manager
 
