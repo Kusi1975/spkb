@@ -33,6 +33,7 @@ theme:
   language: 'en'
   logo: 'assets/sharepoint.png'
   features:
+    - content.code.copy
     - navigation.tabs
     - navigation.tabs.sticky    
     - navigation.path
