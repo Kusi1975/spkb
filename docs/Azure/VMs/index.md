@@ -22,7 +22,7 @@ Fixed size
 
 ![Fixed size](./assets/HyperVFixedSize.png)
 
-### Prepare VM depends
+### Prepare VM
 
 [based on Microsoft Article](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image)
 
