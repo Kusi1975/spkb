@@ -21,7 +21,11 @@ nav:
         - Create a new Project: onPrem/SPFx/createProject.md
         - Project structure: onPrem/SPFx/projectStructure.md
         - Migrate SPFx 2016 to 2019: onPrem/SPFx/migrate16to19.md
+<<<<<<< HEAD
   - PowerShell: onPrem/PowerShell/index.md
+=======
+    - PowerShell: onPrem/PowerShell/index.md
+>>>>>>> 9ab08deb5ee0aacbeb46587a700b51637fd28c6f
   - PowerPlatform: 
     - PowerPlatform: PowerPlatform/index.md
   - React: 
