@@ -17,6 +17,8 @@ nav:
     - PowerShell: onPrem/PowerShell/index.md
   - PowerPlatform: 
     - PowerPlatform: PowerPlatform/index.md
+  - React: 
+    - React: React/index.md
   - About: 
     - About: About/index.md
     - Links: About/links.md
