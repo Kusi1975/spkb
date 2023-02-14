@@ -169,11 +169,11 @@ Open in Browser [Azure Portal](https://portal.azure.com)
 
 Install "Microsoft Azure Storage Explorer" and start it.
 
-Upload the VM with the MASE this create a Disk in Azure
-
 ![Microsoft Azure Storage Explorer](./assets/MASE.png)
 
-Change Type from "Premium SSD" to "Standard SSD"
+Select the file, enter a name and change account type to "Standard SSD" and click "Create" to upload the VM. This create a Disk in Azure after upload.
+
+![MASE Upload](./assets/MASEUpload.png)
 
 Open in Browser [Azure Portal](https://portal.azure.com)
 
@@ -197,11 +197,15 @@ In Azure:
 
 ![Create Snapshot](./assets/AzureCreateSnapshot.png)
 
+- Make a Full Snapshot and change storage type to "Standard HDD"
+
+![Create Snapshot](./assets/AzureCreateSnapshotDialog.png)
+
 - Navigate to the Snapshot and create a Disk
 
 ![Create Disk](./assets/AzureDiskFromSnapshot.png)
 
-Change Type from "Premium SSD" to "Standard SSD"
+Change storage type to "Standard SSD"
 
 ![Create Disk](./assets/AzureCreateDisk.png)
 
