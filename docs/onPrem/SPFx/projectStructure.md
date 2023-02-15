@@ -131,10 +131,10 @@ Example:
 
 ```js
 export interface I<WebPartName>State {
-    error: undefined;
-    isLoaded: boolean;
-    items: IItem[];
-    selectedItem: IItem;
+    error?: undefined;
+    isLoaded?: boolean;
+    items?: IItem[];
+    selectedItem?: IItem;
 }
 export interface IItem {
     ID: number;
@@ -152,7 +152,7 @@ Example:
 ```js
 import { SPHttpClient } from '@microsoft/sp-http';
 
-export interface IKnowledgeBaseProps {
+export interface I<WebPartName>Props {
   siteurl: string;
   spHttpClient: SPHttpClient;
 }
@@ -187,12 +187,12 @@ Example:
 ```js
 import * as React from 'react';
 import styles from './<WebPartName>.module.scss';
-import { I<WebPartName>Props } from './I<WebPartName>Props';
+import { I<WebPartName>Props, I<WebPartName>State } from './I<WebPartName>Props';
 import { SPHttpClient } from '@microsoft/sp-http';
 import { Spinner, SpinnerSize } from 'office-ui-fabric-react';
 import { I<WebPartName>State, IItem } from './I<WebPartName>';
 
-export default class <WebPartName> extends React.Component<I<WebPartName>Props, {}> {
+export default class <WebPartName> extends React.Component<I<WebPartName>Props, I<WebPartName>State> {
   public constructor(props: I<WebPartName>Props) {
     super(props);
     this.state = {
