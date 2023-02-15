@@ -1151,15 +1151,11 @@
 <h2 id="project-structure">Project structure<a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h2>
 <h3 id="package-configuration">Package configuration<a class="headerlink" href="#package-configuration" title="Permanent link">&para;</a></h3>
 <h4 id="package-solution">Package Solution<a class="headerlink" href="#package-solution" title="Permanent link">&para;</a></h4>
-<pre>
-Path: &lt;Projectpath&gt;/config/package-solution.json
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/config/package-solution.json</code></pre>
 
 <p>The name and the name of the file can be adjusted in the package-solution.json file. The version can also be defined.</p>
 <h3 id="package">Package<a class="headerlink" href="#package" title="Permanent link">&para;</a></h3>
-<pre>
-Path: &lt;Projectpath&gt;/package.json
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/package.json</code></pre>
 
 <p>The package.json file also has the version, it should be the same as the version above.</p>
 <p>Additional modules that can be used in the package can be entered in the dependencies section. The same can be achieved with:</p>
@@ -1172,9 +1168,7 @@ Path: &lt;Projectpath&gt;/package.json
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">npm</span> <span class="n">-i</span>
 </code></pre></div>
 <h3 id="gulpfile">Gulpfile<a class="headerlink" href="#gulpfile" title="Permanent link">&para;</a></h3>
-<pre>
-Path: &lt;Projectpath&gt;/gulpfile.js
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/gulpfile.js</code></pre>
 
 <p>So that the package can be created directly using gulp dist, gulp-sequence must first be installed:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">npm</span> <span class="n">install</span> <span class="n">gulp-sequence</span><span class="p">@^</span><span class="n">1</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span> <span class="p">-</span><span class="n">-save-dev</span>
@@ -1222,18 +1216,14 @@ Path: &lt;Projectpath&gt;/gulpfile.js
 </code></pre></div>
 <h3 id="webpart">WebPart<a class="headerlink" href="#webpart" title="Permanent link">&para;</a></h3>
 <h4 id="manifest">Manifest<a class="headerlink" href="#manifest" title="Permanent link">&para;</a></h4>
-<pre>
-Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/&lt;WebPartName&gt;WebPart.manifest.json
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/&lt;WebPartName&gt;WebPart.manifest.json</code></pre>
 
 <p>The groupid value can be a new GUID and given a name in the group value. This name is then used as a category in the classic design.</p>
 <p><img alt="Add WebPart in Classic Mode" src="../assets/WebPartClassic.png" /></p>
 <p>With the value officeFabricIconFontName the icon can be defined in modern design.</p>
 <p><img alt="Add WebPart in Modern Mode" src="../assets/WebPartModern.png" /></p>
 <h4 id="styling">Styling<a class="headerlink" href="#styling" title="Permanent link">&para;</a></h4>
-<pre>
-Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/&lt;WebPartName&gt;.module.scss
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/&lt;WebPartName&gt;.module.scss</code></pre>
 
 <p>The styles can be defined in this file, they can be nested and then converted into a correct CSS when compiling. The name can then be accessed using styles.&lt;Name&gt;. Global CSS classes can be defined using global keyword.</p>
 <p>Example:</p>
@@ -1242,9 +1232,7 @@ Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/&lt;WebPartNam
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
 </code></pre></div>
 <h4 id="interfaces">Interfaces<a class="headerlink" href="#interfaces" title="Permanent link">&para;</a></h4>
-<pre>
-Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartName&gt;.ts
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartName&gt;.ts</code></pre>
 
 <p>This file contains the interfaces for this WebPart.</p>
 <p>Example:</p>
@@ -1260,9 +1248,7 @@ Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartNa
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">}</span>
 </code></pre></div>
 <h4 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h4>
-<pre>
-Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartName&gt;Props.ts
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartName&gt;Props.ts</code></pre>
 
 <p>Props contains global variables and properties from the settings panel
 Example:</p>
@@ -1274,9 +1260,7 @@ Example:</p>
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
 </code></pre></div>
 <h4 id="init-file">Init file<a class="headerlink" href="#init-file" title="Permanent link">&para;</a></h4>
-<pre>
-Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/&lt;WebPartName&gt;WebPart.ts
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/&lt;WebPartName&gt;WebPart.ts</code></pre>
 
 <p>The global values of props are defined here
 Example:</p>
@@ -1292,9 +1276,7 @@ Example:</p>
 <a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span><span class="p">}</span>
 </code></pre></div>
 <h4 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h4>
-<pre>
-Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartName&gt;.tsx
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartName&gt;.tsx</code></pre>
 
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
