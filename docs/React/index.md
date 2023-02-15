@@ -11,16 +11,16 @@ Wait on Promise from Sub Async functions in a loop.
         siteUrl: string, spHttpClient: SPHttpClient): Promise<string[]> {
         return new Promise<string[]>(resolve => {
             const itemsDetail: string[] = [];
-            const all: Promise<string>[] = [];
+            const allPromises: Promise<string>[] = [];
             this.getItemsAsync(itemids).then((items) => {
                 for (const item of items) {
-                    all.push(this.getDetailInfoAsync(item.id, siteUrl, spHttpClient));
+                    allPromises.push(this.getDetailInfoAsync(item.id, siteUrl, spHttpClient));
                 }
-                Promise.all(all).then((v: string[]) => {
-                    v.forEach(u => {
-                        itemsDetail.push(u);
+                Promise.all(allPromises).then((all: string[]) => {
+                    all.forEach(i => {
+                        itemsDetail.push(i);
                     });
-                    resolve(eMails);
+                    resolve(itemsDetail);
                 });
             });
         });
