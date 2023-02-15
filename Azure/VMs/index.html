@@ -455,6 +455,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#startstop-vm" class="md-nav__link">
+    Start/Stop VM
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1011,6 +1018,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#startstop-vm" class="md-nav__link">
+    Start/Stop VM
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1197,6 +1211,231 @@
 <li>Naviagte to the Disk and create a VM</li>
 </ul>
 <p><img alt="Create VM" src="assets/AzureCreateVM.png" /></p>
+<h3 id="startstop-vm">Start/Stop VM<a class="headerlink" href="#startstop-vm" title="Permanent link">&para;</a></h3>
+<p>Create resource "Start/Stop VMs during off hours - V2"</p>
+<p><img alt="Start/Stop VMs during off hours - V2" src="assets/AzureStartStop.png" /></p>
+<p>Edit Logic App</p>
+<p><img alt="Edit Logic App" src="assets/AzureSchedulerEdit.png" /></p>
+<p>Show Code View</p>
+<p><img alt="Show Code View" src="assets/AzureSchedulerCodeView.png" /></p>
+<p>Then "Save" it and wit "Run trigger" it can run it on time.</p>
+<p>Enable Logic App</p>
+<p><img alt="Enable Logic App" src="assets/AzureSchedulerEnable.png" /></p>
+<p>Example Logic App ..._Scheduled_start</p>
+<pre>
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Function-Catch": {
+                "actions": {
+                    "Terminate": {
+                        "inputs": {
+                            "runError": {
+                                "code": "@{outputs['Scheduled']('statusCode')}",
+                                "message": "@{body('Scheduled')}"
+                            },
+                            "runStatus": "Failed"
+                        },
+                        "runAfter": {},
+                        "type": "Terminate"
+                    }
+                },
+                "runAfter": {
+                    "Function-Try": [
+                        "Failed",
+                        "Skipped",
+                        "TimedOut"
+                    ]
+                },
+                "type": "Scope"
+            },
+            "Function-Success": {
+                "actions": {},
+                "runAfter": {
+                    "Function-Try": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Scope"
+            },
+            "Function-Try": {
+                "actions": {
+                    "Scheduled": {
+                        "inputs": {
+                            "body": {
+                                "Action": "start",
+                                "EnableClassic": false,
+                                "RequestScopes": {<span style='color:red'>
+                                    "ExcludedVMLists": [],
+                                    "VMLists": [
+                                        "/subscriptions/<b>[Subscription-ID]</b>/resourceGroups/<b>[Resource group name]</b>/providers/Microsoft.Compute/virtualMachines/<b>[VM Name]</b>"
+                                    ]</span>
+                                }
+                            },
+                            "function": {
+                                "id": "/subscriptions/<b>[Subscription-ID]</b>/resourceGroups/<b>[Resource group name]</b>/providers/Microsoft.Web/sites/<b>[FunctionName]</b>/functions/Scheduled"
+                            }
+                        },
+                        "runAfter": {},
+                        "type": "Function"
+                    }
+                },
+                "runAfter": {},
+                "type": "Scope"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "parameters": {},
+        "triggers": {
+            "Recurrence": {<span style='color:red'>
+                "evaluatedRecurrence": {
+                    "frequency": "Week",
+                    "interval": 1,
+                    "schedule": {
+                        "hours": [
+                            "8"
+                        ],
+                        "minutes": [
+                            0
+                        ],
+                        "weekDays": [
+                            "Saturday"
+                        ]
+                    },
+                    "timeZone": "W. Europe Standard Time"</span>
+                },
+                "recurrence": {<span style='color:red'>
+                    "frequency": "Week",
+                    "interval": 1,
+                    "schedule": {
+                        "hours": [
+                            "8"
+                        ],
+                        "minutes": [
+                            0
+                        ],
+                        "weekDays": [
+                            "Saturday"
+                        ]
+                    },
+                    "timeZone": "W. Europe Standard Time"</span>
+                },
+                "type": "Recurrence"
+            }
+        }
+    },
+    "parameters": {}
+}
+</pre>
+
+<p>Example Logic App ..._Scheduled_stop</p>
+<pre>
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Function-Catch": {
+                "actions": {
+                    "Terminate": {
+                        "inputs": {
+                            "runError": {
+                                "code": "@{outputs['Scheduled']('statusCode')}",
+                                "message": "@{body('Scheduled')}"
+                            },
+                            "runStatus": "Failed"
+                        },
+                        "runAfter": {},
+                        "type": "Terminate"
+                    }
+                },
+                "runAfter": {
+                    "Function-Try": [
+                        "Failed",
+                        "Skipped",
+                        "TimedOut"
+                    ]
+                },
+                "type": "Scope"
+            },
+            "Function-Success": {
+                "actions": {},
+                "runAfter": {
+                    "Function-Try": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Scope"
+            },
+            "Function-Try": {
+                "actions": {
+                    "Scheduled": {
+                        "inputs": {
+                            "body": {
+                                "Action": "stop",
+                                "EnableClassic": false,
+                                "RequestScopes": {<span style='color:red'>
+                                    "ExcludedVMLists": [],
+                                    "VMLists": [
+                                        "/subscriptions/<b>[Subscription-ID]</b>/resourceGroups/<b>[Resource group name]</b>/providers/Microsoft.Compute/virtualMachines/<b>[VM Name]</b>"
+                                    ]</span>
+                                }
+                            },
+                            "function": {
+                                "id": "/subscriptions/<b>[Subscription-ID]</b>/resourceGroups/<b>[Resource group name]</b>/providers/Microsoft.Web/sites/<b>[FunctionName]</b>/functions/Scheduled"
+                            }
+                        },
+                        "runAfter": {},
+                        "type": "Function"
+                    }
+                },
+                "runAfter": {},
+                "type": "Scope"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "parameters": {},
+        "triggers": {
+            "Recurrence": {
+                "evaluatedRecurrence": {<span style='color:red'>
+                    "frequency": "Week",
+                    "interval": 1,
+                    "schedule": {
+                        "hours": [
+                            "12"
+                        ],
+                        "minutes": [
+                            0
+                        ],
+                        "weekDays": [
+                            "Sunday"
+                        ]
+                    },
+                    "timeZone": "W. Europe Standard Time"</span>
+                },
+                "recurrence": {<span style='color:red'>
+                   "frequency": "Week",
+                    "interval": 1,
+                    "schedule": {
+                        "hours": [
+                            "12"
+                        ],
+                        "minutes": [
+                            0
+                        ],
+                        "weekDays": [
+                            "Sunday"
+                        ]
+                    },
+                    "timeZone": "W. Europe Standard Time"</span>
+                },
+                "type": "Recurrence"
+            }
+        }
+    },
+    "parameters": {}
+}
+</pre>
 
 
 
