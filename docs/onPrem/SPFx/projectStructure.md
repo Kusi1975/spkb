@@ -187,7 +187,7 @@ Example:
 ```js
 import * as React from 'react';
 import styles from './<WebPartName>.module.scss';
-import { I<WebPartName>Props, I<WebPartName>State } from './I<WebPartName>Props';
+import { I<WebPartName>Props } from './I<WebPartName>Props';
 import { SPHttpClient } from '@microsoft/sp-http';
 import { Spinner, SpinnerSize } from 'office-ui-fabric-react';
 import { I<WebPartName>State, IItem } from './I<WebPartName>';
@@ -222,7 +222,7 @@ export default class <WebPartName> extends React.Component<I<WebPartName>Props, 
   }
 
   public render(): React.ReactElement<IKnowledgeBaseProps> {
-    const { items, selectedItem, error, isLoaded } = this.state as IKnowledgeBaseState;
+    const { items, selectedItem, error, isLoaded } = this.state;
     let retValue: JSX.Element = <div>{strings.NoData}</div>;
     if (error) {
       retValue = <div className={styles.error}>{strings.Error}: {error}</div>;
