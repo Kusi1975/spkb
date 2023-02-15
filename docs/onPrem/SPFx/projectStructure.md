@@ -6,17 +6,13 @@
 
 #### Package Solution
 
-<pre>
-Path: &lt;Projectpath&gt;/config/package-solution.json
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/config/package-solution.json</code></pre>
 
 The name and the name of the file can be adjusted in the package-solution.json file. The version can also be defined.
 
 ### Package
 
-<pre>
-Path: &lt;Projectpath&gt;/package.json
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/package.json</code></pre>
 
 The package.json file also has the version, it should be the same as the version above.
 
@@ -40,9 +36,7 @@ npm -i
 
 ### Gulpfile
 
-<pre>
-Path: &lt;Projectpath&gt;/gulpfile.js
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/gulpfile.js</code></pre>
 
 So that the package can be created directly using gulp dist, gulp-sequence must first be installed:
 
@@ -103,9 +97,7 @@ gulp dist
 
 #### Manifest
 
-<pre>
-Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/&lt;WebPartName&gt;WebPart.manifest.json
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/&lt;WebPartName&gt;WebPart.manifest.json</code></pre>
 
 The groupid value can be a new GUID and given a name in the group value. This name is then used as a category in the classic design.
 
@@ -117,9 +109,7 @@ With the value officeFabricIconFontName the icon can be defined in modern design
 
 #### Styling
 
-<pre>
-Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/&lt;WebPartName&gt;.module.scss
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/&lt;WebPartName&gt;.module.scss</code></pre>
 
 The styles can be defined in this file, they can be nested and then converted into a correct CSS when compiling. The name can then be accessed using styles.&lt;Name&gt;. Global CSS classes can be defined using global keyword.
 
@@ -133,9 +123,7 @@ Example:
 
 #### Interfaces
 
-<pre>
-Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartName&gt;.ts
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartName&gt;.ts</code></pre>
 
 This file contains the interfaces for this WebPart.
 
@@ -156,9 +144,7 @@ export interface IItem {
 
 #### Properties
 
-<pre>
-Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartName&gt;Props.ts
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartName&gt;Props.ts</code></pre>
 
 Props contains global variables and properties from the settings panel
 Example:
@@ -174,9 +160,7 @@ export interface IKnowledgeBaseProps {
 
 #### Init file
 
-<pre>
-Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/&lt;WebPartName&gt;WebPart.ts
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/&lt;WebPartName&gt;WebPart.ts</code></pre>
 
 The global values of props are defined here
 Example:
@@ -196,9 +180,7 @@ Example:
 
 #### Code
 
-<pre>
-Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartName&gt;.tsx
-</pre>
+<pre><code>Path: &lt;Projectpath&gt;/webparts/&lt;WebPartName&gt;/components/I&lt;WebPartName&gt;.tsx</code></pre>
 
 Example:
 

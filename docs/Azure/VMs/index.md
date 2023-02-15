@@ -235,9 +235,7 @@ Enable Logic App
 
 Example Logic App ..._Scheduled_start
 
-<pre>
-<code>
-{
+<pre><code>{
     "definition": {
         "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
         "actions": {
@@ -340,15 +338,11 @@ Example Logic App ..._Scheduled_start
         }
     },
     "parameters": {}
-}
-</code>
-</pre>
+}</code></pre>
 
 Example Logic App ..._Scheduled_stop
 
-<pre>
-<code>
-{
+<pre><code>{
     "definition": {
         "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
         "actions": {
@@ -451,6 +445,4 @@ Example Logic App ..._Scheduled_stop
         }
     },
     "parameters": {}
-}
-</code>
-</pre>
+}</code></pre>
