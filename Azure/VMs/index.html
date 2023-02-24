@@ -435,8 +435,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#upload-vm" class="md-nav__link">
-    Upload VM
+  <a href="#upload-vm-disk" class="md-nav__link">
+    Upload VM Disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-vm-from-a-vm-disk" class="md-nav__link">
+    Create VM from a VM Disk
   </a>
   
 </li>
@@ -998,8 +1005,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#upload-vm" class="md-nav__link">
-    Upload VM
+  <a href="#upload-vm-disk" class="md-nav__link">
+    Upload VM Disk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-vm-from-a-vm-disk" class="md-nav__link">
+    Create VM from a VM Disk
   </a>
   
 </li>
@@ -1065,102 +1079,107 @@
 <p><a href="https://learn.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image">based on Microsoft Article</a></p>
 <p>Start the VM and install all Windows Updates and reboot</p>
 <p>After reboot start PowerShell:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">sfc</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">scannow</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">netsh</span><span class="p">.</span><span class="n">exe</span> <span class="n">winhttp</span> <span class="n">reset</span> <span class="n">proxy</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">diskpart</span><span class="p">.</span><span class="n">exe</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">san</span> <span class="n">policy</span><span class="p">=</span><span class="n">onlineall</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">exit</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="n">HKLM</span><span class="p">:\</span><span class="n">SYSTEM</span><span class="p">\</span><span class="n">CurrentControlSet</span><span class="p">\</span><span class="n">Control</span><span class="p">\</span><span class="n">TimeZoneInformation</span> <span class="n">-Name</span> <span class="n">RealTimeIsUniversal</span> <span class="n">-Value</span> <span class="n">1</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nb">Set-Service</span> <span class="n">-Name</span> <span class="n">w32time</span> <span class="n">-StartupType</span> <span class="n">Automatic</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">powercfg</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">setactive</span> <span class="n">SCHEME_MIN</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">powercfg</span> <span class="p">/</span><span class="n">setacvalueindex</span> <span class="n">SCHEME_CURRENT</span> <span class="n">SUB_VIDEO</span> <span class="n">VIDEOIDLE</span> <span class="n">0</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment&#39;</span> <span class="n">-Name</span> <span class="n">TEMP</span> <span class="n">-Value</span> <span class="s2">&quot;%SystemRoot%\TEMP&quot;</span> <span class="n">-Type</span> <span class="n">ExpandString</span> <span class="n">-Force</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment&#39;</span> <span class="n">-Name</span> <span class="n">TMP</span> <span class="n">-Value</span> <span class="s2">&quot;%SystemRoot%\TEMP&quot;</span> <span class="n">-Type</span> <span class="n">ExpandString</span> <span class="n">-Force</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nb">Get-Service</span> <span class="n">-Name</span> <span class="n">BFE</span><span class="p">,</span> <span class="n">Dhcp</span><span class="p">,</span> <span class="n">Dnscache</span><span class="p">,</span> <span class="n">IKEEXT</span><span class="p">,</span> <span class="n">iphlpsvc</span><span class="p">,</span> <span class="n">nsi</span><span class="p">,</span> <span class="n">mpssvc</span><span class="p">,</span> <span class="n">RemoteRegistry</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="n">StartType</span> <span class="o">-ne</span> <span class="n">Automatic</span> <span class="p">|</span> <span class="nb">Set-Service</span> <span class="n">-StartupType</span> <span class="n">Automatic</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="nb">Get-Service</span> <span class="n">-Name</span> <span class="n">Netlogon</span><span class="p">,</span> <span class="n">Netman</span><span class="p">,</span> <span class="n">TermService</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="n">StartType</span> <span class="o">-ne</span> <span class="n">Manual</span> <span class="p">|</span> <span class="nb">Set-Service</span> <span class="n">-StartupType</span> <span class="n">Manual</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server&#39;</span> <span class="n">-Name</span> <span class="n">fDenyTSConnections</span> <span class="n">-Value</span> <span class="n">0</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services&#39;</span> <span class="n">-Name</span> <span class="n">fDenyTSConnections</span> <span class="n">-Value</span> <span class="n">0</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">PortNumber</span> <span class="n">-Value</span> <span class="n">3389</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">LanAdapter</span> <span class="n">-Value</span> <span class="n">0</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">UserAuthentication</span> <span class="n">-Value</span> <span class="n">1</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services&#39;</span> <span class="n">-Name</span> <span class="n">KeepAliveEnable</span> <span class="n">-Value</span> <span class="n">1</span>  <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services&#39;</span> <span class="n">-Name</span> <span class="n">KeepAliveInterval</span> <span class="n">-Value</span> <span class="n">1</span>  <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">KeepAliveTimeout</span> <span class="n">-Value</span> <span class="n">1</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services&#39;</span> <span class="n">-Name</span> <span class="n">fDisableAutoReconnect</span> <span class="n">-Value</span> <span class="n">0</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">fInheritReconnectSame</span> <span class="n">-Value</span> <span class="n">1</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">fReconnectSame</span> <span class="n">-Value</span> <span class="n">0</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">MaxInstanceCount</span> <span class="n">-Value</span> <span class="n">4294967295</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="k">if</span> <span class="p">((</span><span class="nb">Get-Item</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#39;</span><span class="p">).</span><span class="n">Property</span> <span class="o">-contains</span> <span class="s1">&#39;SSLCertificateSHA1Hash&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="p">{</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    <span class="nb">Remove-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">SSLCertificateSHA1Hash</span> <span class="n">-Force</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="p">}</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="nb">Set-NetFirewallProfile</span> <span class="n">-Profile</span> <span class="n">Domain</span><span class="p">,</span> <span class="n">Public</span><span class="p">,</span> <span class="n">Private</span> <span class="n">-Enabled</span> <span class="n">True</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="nb">Enable-PSRemoting</span> <span class="n">-Force</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="nb">Set-NetFirewallRule</span> <span class="n">-Name</span> <span class="n">WINRM-HTTP-In-TCP</span><span class="p">,</span> <span class="n">WINRM-HTTP-In-TCP-PUBLIC</span> <span class="n">-Enabled</span> <span class="n">True</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
-<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="nb">Set-NetFirewallRule</span> <span class="n">-Group</span> <span class="s1">&#39;@FirewallAPI.dll,-28752&#39;</span> <span class="n">-Enabled</span> <span class="n">True</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>
-<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="nb">Set-NetFirewallRule</span> <span class="n">-Name</span> <span class="n">FPS-ICMP4-ERQ-In</span> <span class="n">-Enabled</span> <span class="n">True</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="n">AzurePlatform</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-RemoteAddress</span> <span class="n">168</span><span class="p">.</span><span class="n">63</span><span class="p">.</span><span class="n">129</span><span class="p">.</span><span class="n">16</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-EdgeTraversalPolicy</span> <span class="n">Allow</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="n">AzurePlatform</span> <span class="n">-Direction</span> <span class="n">Outbound</span> <span class="n">-RemoteAddress</span> <span class="n">168</span><span class="p">.</span><span class="n">63</span><span class="p">.</span><span class="n">129</span><span class="p">.</span><span class="n">16</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-Action</span> <span class="n">Allow</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>
-<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="n">chkdsk</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">f</span>
-</code></pre></div>
 <p>In Cmd:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bcdedit.exe /set &quot;{bootmgr}&quot; integrityservices enable
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>bcdedit.exe /set &quot;{default}&quot; device partition=C:
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>bcdedit.exe /set &quot;{default}&quot; integrityservices enable
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>bcdedit.exe /set &quot;{default}&quot; recoveryenabled Off
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>bcdedit.exe /set &quot;{default}&quot; osdevice partition=C:
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>bcdedit.exe /set &quot;{default}&quot; bootstatuspolicy IgnoreAllFailures
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>bcdedit.exe /set &quot;{bootmgr}&quot; displaybootmenu yes
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>bcdedit.exe /set &quot;{bootmgr}&quot; timeout 5
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>bcdedit.exe /set &quot;{bootmgr}&quot; bootems yes
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>bcdedit.exe /ems &quot;{current}&quot; ON
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>bcdedit.exe /emssettings EMSPORT:1 EMSBAUDRATE:115200
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sfc.exe /scannow
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>diskpart.exe
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>san policy=onlineall
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>exit
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">netsh</span><span class="p">.</span><span class="n">exe</span> <span class="n">winhttp</span> <span class="n">reset</span> <span class="n">proxy</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="n">HKLM</span><span class="p">:\</span><span class="n">SYSTEM</span><span class="p">\</span><span class="n">CurrentControlSet</span><span class="p">\</span><span class="n">Control</span><span class="p">\</span><span class="n">TimeZoneInformation</span> <span class="n">-Name</span> <span class="n">RealTimeIsUniversal</span> <span class="n">-Value</span> <span class="n">1</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">Set-Service</span> <span class="n">-Name</span> <span class="n">w32time</span> <span class="n">-StartupType</span> <span class="n">Automatic</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">powercfg</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">setactive</span> <span class="n">SCHEME_MIN</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">powercfg</span> <span class="p">/</span><span class="n">setacvalueindex</span> <span class="n">SCHEME_CURRENT</span> <span class="n">SUB_VIDEO</span> <span class="n">VIDEOIDLE</span> <span class="n">0</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment&#39;</span> <span class="n">-Name</span> <span class="n">TEMP</span> <span class="n">-Value</span> <span class="s2">&quot;%SystemRoot%\TEMP&quot;</span> <span class="n">-Type</span> <span class="n">ExpandString</span> <span class="n">-Force</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment&#39;</span> <span class="n">-Name</span> <span class="n">TMP</span> <span class="n">-Value</span> <span class="s2">&quot;%SystemRoot%\TEMP&quot;</span> <span class="n">-Type</span> <span class="n">ExpandString</span> <span class="n">-Force</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nb">Get-Service</span> <span class="n">-Name</span> <span class="n">BFE</span><span class="p">,</span> <span class="n">Dhcp</span><span class="p">,</span> <span class="n">Dnscache</span><span class="p">,</span> <span class="n">IKEEXT</span><span class="p">,</span> <span class="n">iphlpsvc</span><span class="p">,</span> <span class="n">nsi</span><span class="p">,</span> <span class="n">mpssvc</span><span class="p">,</span> <span class="n">RemoteRegistry</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="n">StartType</span> <span class="o">-ne</span> <span class="n">Automatic</span> <span class="p">|</span> <span class="nb">Set-Service</span> <span class="n">-StartupType</span> <span class="n">Automatic</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nb">Get-Service</span> <span class="n">-Name</span> <span class="n">Netlogon</span><span class="p">,</span> <span class="n">Netman</span><span class="p">,</span> <span class="n">TermService</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="n">StartType</span> <span class="o">-ne</span> <span class="n">Manual</span> <span class="p">|</span> <span class="nb">Set-Service</span> <span class="n">-StartupType</span> <span class="n">Manual</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server&#39;</span> <span class="n">-Name</span> <span class="n">fDenyTSConnections</span> <span class="n">-Value</span> <span class="n">0</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services&#39;</span> <span class="n">-Name</span> <span class="n">fDenyTSConnections</span> <span class="n">-Value</span> <span class="n">0</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">PortNumber</span> <span class="n">-Value</span> <span class="n">3389</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">LanAdapter</span> <span class="n">-Value</span> <span class="n">0</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">UserAuthentication</span> <span class="n">-Value</span> <span class="n">1</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services&#39;</span> <span class="n">-Name</span> <span class="n">KeepAliveEnable</span> <span class="n">-Value</span> <span class="n">1</span>  <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services&#39;</span> <span class="n">-Name</span> <span class="n">KeepAliveInterval</span> <span class="n">-Value</span> <span class="n">1</span>  <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">KeepAliveTimeout</span> <span class="n">-Value</span> <span class="n">1</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services&#39;</span> <span class="n">-Name</span> <span class="n">fDisableAutoReconnect</span> <span class="n">-Value</span> <span class="n">0</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">fInheritReconnectSame</span> <span class="n">-Value</span> <span class="n">1</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">fReconnectSame</span> <span class="n">-Value</span> <span class="n">0</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">MaxInstanceCount</span> <span class="n">-Value</span> <span class="n">4294967295</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="k">if</span> <span class="p">((</span><span class="nb">Get-Item</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#39;</span><span class="p">).</span><span class="n">Property</span> <span class="o">-contains</span> <span class="s1">&#39;SSLCertificateSHA1Hash&#39;</span><span class="p">)</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="p">{</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    <span class="nb">Remove-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#39;</span> <span class="n">-Name</span> <span class="n">SSLCertificateSHA1Hash</span> <span class="n">-Force</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="p">}</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="nb">Set-NetFirewallProfile</span> <span class="n">-Profile</span> <span class="n">Domain</span><span class="p">,</span> <span class="n">Public</span><span class="p">,</span> <span class="n">Private</span> <span class="n">-Enabled</span> <span class="n">True</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="nb">Enable-PSRemoting</span> <span class="n">-Force</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="nb">Set-NetFirewallRule</span> <span class="n">-Name</span> <span class="n">WINRM-HTTP-In-TCP</span><span class="p">,</span> <span class="n">WINRM-HTTP-In-TCP-PUBLIC</span> <span class="n">-Enabled</span> <span class="n">True</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="nb">Set-NetFirewallRule</span> <span class="n">-Group</span> <span class="s1">&#39;@FirewallAPI.dll,-28752&#39;</span> <span class="n">-Enabled</span> <span class="n">True</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="nb">Set-NetFirewallRule</span> <span class="n">-Name</span> <span class="n">FPS-ICMP4-ERQ-In</span> <span class="n">-Enabled</span> <span class="n">True</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="n">AzurePlatform</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-RemoteAddress</span> <span class="n">168</span><span class="p">.</span><span class="n">63</span><span class="p">.</span><span class="n">129</span><span class="p">.</span><span class="n">16</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-EdgeTraversalPolicy</span> <span class="n">Allow</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="n">AzurePlatform</span> <span class="n">-Direction</span> <span class="n">Outbound</span> <span class="n">-RemoteAddress</span> <span class="n">168</span><span class="p">.</span><span class="n">63</span><span class="p">.</span><span class="n">129</span><span class="p">.</span><span class="n">16</span> <span class="n">-Profile</span> <span class="n">Any</span> <span class="n">-Action</span> <span class="n">Allow</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="n">chkdsk</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">f</span>
+</code></pre></div>
+<p>Reboot VM</p>
+<p>In Cmd:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bcdedit.exe /set &quot;{bootmgr}&quot; integrityservices enable
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>bcdedit.exe /set &quot;{default}&quot; device partition=C:
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>bcdedit.exe /set &quot;{default}&quot; integrityservices enable
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>bcdedit.exe /set &quot;{default}&quot; recoveryenabled Off
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>bcdedit.exe /set &quot;{default}&quot; osdevice partition=C:
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>bcdedit.exe /set &quot;{default}&quot; bootstatuspolicy IgnoreAllFailures
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>bcdedit.exe /set &quot;{bootmgr}&quot; displaybootmenu yes
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>bcdedit.exe /set &quot;{bootmgr}&quot; timeout 5
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>bcdedit.exe /set &quot;{bootmgr}&quot; bootems yes
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>bcdedit.exe /ems &quot;{current}&quot; ON
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>bcdedit.exe /emssettings EMSPORT:1 EMSBAUDRATE:115200
 </code></pre></div>
 <p>In PowerShell:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl&#39;</span> <span class="n">-Name</span> <span class="n">CrashDumpEnabled</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span> <span class="n">-Value</span> <span class="n">2</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl&#39;</span> <span class="n">-Name</span> <span class="n">DumpFile</span> <span class="n">-Type</span> <span class="n">ExpandString</span> <span class="n">-Force</span> <span class="n">-Value</span> <span class="s2">&quot;%SystemRoot%\MEMORY.DMP&quot;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl&#39;</span> <span class="n">-Name</span> <span class="n">NMICrashDump</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span> <span class="n">-Value</span> <span class="n">1</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nv">$key</span> <span class="p">=</span> <span class="s1">&#39;HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps&#39;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">if</span> <span class="p">((</span><span class="nb">Test-Path</span> <span class="n">-Path</span> <span class="nv">$key</span><span class="p">)</span> <span class="o">-eq</span> <span class="nv">$false</span><span class="p">)</span> <span class="p">{(</span><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting&#39;</span> <span class="n">-Name</span> <span class="n">LocalDumps</span><span class="p">)}</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="nv">$key</span> <span class="n">-Name</span> <span class="n">DumpFolder</span> <span class="n">-Type</span> <span class="n">ExpandString</span> <span class="n">-Force</span> <span class="n">-Value</span> <span class="s1">&#39;C:\CrashDumps&#39;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="nv">$key</span> <span class="n">-Name</span> <span class="n">CrashCount</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span> <span class="n">-Value</span> <span class="n">10</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="nv">$key</span> <span class="n">-Name</span> <span class="n">DumpType</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span> <span class="n">-Value</span> <span class="n">2</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nb">Set-Service</span> <span class="n">-Name</span> <span class="n">WerSvc</span> <span class="n">-StartupType</span> <span class="n">Manual</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">winmgmt</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">verifyrepository</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl&#39;</span> <span class="n">-Name</span> <span class="n">CrashDumpEnabled</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span> <span class="n">-Value</span> <span class="n">2</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl&#39;</span> <span class="n">-Name</span> <span class="n">DumpFile</span> <span class="n">-Type</span> <span class="n">ExpandString</span> <span class="n">-Force</span> <span class="n">-Value</span> <span class="s2">&quot;%SystemRoot%\MEMORY.DMP&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl&#39;</span> <span class="n">-Name</span> <span class="n">NMICrashDump</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span> <span class="n">-Value</span> <span class="n">1</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nv">$key</span> <span class="p">=</span> <span class="s1">&#39;HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps&#39;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">if</span> <span class="p">((</span><span class="nb">Test-Path</span> <span class="n">-Path</span> <span class="nv">$key</span><span class="p">)</span> <span class="o">-eq</span> <span class="nv">$false</span><span class="p">)</span> <span class="p">{(</span><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting&#39;</span> <span class="n">-Name</span> <span class="n">LocalDumps</span><span class="p">)}</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="nv">$key</span> <span class="n">-Name</span> <span class="n">DumpFolder</span> <span class="n">-Type</span> <span class="n">ExpandString</span> <span class="n">-Force</span> <span class="n">-Value</span> <span class="s1">&#39;C:\CrashDumps&#39;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="nv">$key</span> <span class="n">-Name</span> <span class="n">CrashCount</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span> <span class="n">-Value</span> <span class="n">10</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nb">New-ItemProperty</span> <span class="n">-Path</span> <span class="nv">$key</span> <span class="n">-Name</span> <span class="n">DumpType</span> <span class="n">-Type</span> <span class="n">DWord</span> <span class="n">-Force</span> <span class="n">-Value</span> <span class="n">2</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">Set-Service</span> <span class="n">-Name</span> <span class="n">WerSvc</span> <span class="n">-StartupType</span> <span class="n">Manual</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">winmgmt</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">verifyrepository</span>
 </code></pre></div>
 <p>Make sure no other applications than TermService are using port</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">netstat</span><span class="p">.</span><span class="n">exe</span> <span class="n">-anob</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">netstat</span><span class="p">.</span><span class="n">exe</span> <span class="n">-anob</span>
 </code></pre></div>
 <p>In CMD:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mmc.exe
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mmc.exe
 </code></pre></div>
+<p>File / Add or Remove Snap-ins
+Add <strong>Group Policy Object Editor</strong> for <strong>Local Computer</strong>
+Navigate to <strong>Configuration\Windows Settings\Security Settings\Local Policies\User Rights Assignment</strong></p>
 <p>Check they're not blocked:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Computer Configuration\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Deny access to this computer from the network
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Deny access to this computer from the network
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Computer Configuration\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Deny log on through Remote Desktop Services
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Deny log on through Remote Desktop Services
 </code></pre></div>
 <p>The following groups should be listet:</p>
 <ul>
@@ -1169,7 +1188,8 @@
 <li>Everyone</li>
 <li>Users</li>
 </ul>
-<h3 id="upload-vm">Upload VM<a class="headerlink" href="#upload-vm" title="Permanent link">&para;</a></h3>
+<h3 id="upload-vm-disk">Upload VM Disk<a class="headerlink" href="#upload-vm-disk" title="Permanent link">&para;</a></h3>
+<p>The Subscription must have <strong>Microsoft.Network</strong> and <strong>Microsoft.Compute</strong> registered under <strong>Resource providers</strong></p>
 <p>Open in Browser <a href="https://portal.azure.com">Azure Portal</a></p>
 <ul>
 <li>Create a Ressource "Storage Account"</li>
@@ -1182,6 +1202,7 @@
 <p><img alt="Microsoft Azure Storage Explorer" src="assets/MASE.png" /></p>
 <p>Select the file, enter a name and change account type to "Standard SSD" and click "Create" to upload the VM. This create a Disk in Azure after upload.</p>
 <p><img alt="MASE Upload" src="assets/MASEUpload.png" /></p>
+<h3 id="create-vm-from-a-vm-disk">Create VM from a VM Disk<a class="headerlink" href="#create-vm-from-a-vm-disk" title="Permanent link">&para;</a></h3>
 <p>Open in Browser <a href="https://portal.azure.com">Azure Portal</a></p>
 <ul>
 <li>Navigate to the Disk and Create a Virtual Computer on the Disk</li>
@@ -1189,7 +1210,7 @@
 <p><img alt="Create VM" src="assets/AzureCreateVM.png" /></p>
 <h3 id="first-run-in-azure">First Run in Azure<a class="headerlink" href="#first-run-in-azure" title="Permanent link">&para;</a></h3>
 <p>In PowerShell:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management&#39;</span> <span class="n">-Name</span> <span class="n">PagingFiles</span> <span class="n">-Value</span> <span class="s1">&#39;D:\pagefile.sys&#39;</span> <span class="n">-Type</span> <span class="n">MultiString</span> <span class="n">-Force</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management&#39;</span> <span class="n">-Name</span> <span class="n">PagingFiles</span> <span class="n">-Value</span> <span class="s1">&#39;D:\pagefile.sys&#39;</span> <span class="n">-Type</span> <span class="n">MultiString</span> <span class="n">-Force</span>
 </code></pre></div>
 <h3 id="clone-a-vm">Clone a VM<a class="headerlink" href="#clone-a-vm" title="Permanent link">&para;</a></h3>
 <p>In Azure:</p>
