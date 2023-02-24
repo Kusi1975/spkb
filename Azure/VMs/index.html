@@ -456,8 +456,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#clone-a-vm" class="md-nav__link">
-    Clone a VM
+  <a href="#create-a-snapshot-from-a-vm" class="md-nav__link">
+    Create a Snapshot from a VM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-vm-from-a-snapshot" class="md-nav__link">
+    Create a VM from a Snapshot
   </a>
   
 </li>
@@ -1026,8 +1033,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#clone-a-vm" class="md-nav__link">
-    Clone a VM
+  <a href="#create-a-snapshot-from-a-vm" class="md-nav__link">
+    Create a Snapshot from a VM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-vm-from-a-snapshot" class="md-nav__link">
+    Create a VM from a Snapshot
   </a>
   
 </li>
@@ -1212,7 +1226,7 @@ Navigate to <strong>Configuration\Windows Settings\Security Settings\Local Polic
 <p>In PowerShell:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management&#39;</span> <span class="n">-Name</span> <span class="n">PagingFiles</span> <span class="n">-Value</span> <span class="s1">&#39;D:\pagefile.sys&#39;</span> <span class="n">-Type</span> <span class="n">MultiString</span> <span class="n">-Force</span>
 </code></pre></div>
-<h3 id="clone-a-vm">Clone a VM<a class="headerlink" href="#clone-a-vm" title="Permanent link">&para;</a></h3>
+<h3 id="create-a-snapshot-from-a-vm">Create a Snapshot from a VM<a class="headerlink" href="#create-a-snapshot-from-a-vm" title="Permanent link">&para;</a></h3>
 <p>In Azure:</p>
 <ul>
 <li>Navigate to the Disk and create a Snapshot</li>
@@ -1222,6 +1236,7 @@ Navigate to <strong>Configuration\Windows Settings\Security Settings\Local Polic
 <li>Make a Full Snapshot and change storage type to "Standard HDD"</li>
 </ul>
 <p><img alt="Create Snapshot" src="assets/AzureCreateSnapshotDialog.png" /></p>
+<h3 id="create-a-vm-from-a-snapshot">Create a VM from a Snapshot<a class="headerlink" href="#create-a-vm-from-a-snapshot" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Navigate to the Snapshot and create a Disk</li>
 </ul>
