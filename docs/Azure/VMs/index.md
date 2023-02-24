@@ -203,7 +203,7 @@ In PowerShell:
 Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management' -Name PagingFiles -Value 'D:\pagefile.sys' -Type MultiString -Force
 ```
 
-### Clone a VM
+### Create a Snapshot from a VM
 
 In Azure:
 
@@ -214,6 +214,8 @@ In Azure:
 - Make a Full Snapshot and change storage type to "Standard HDD"
 
 ![Create Snapshot](./assets/AzureCreateSnapshotDialog.png)
+
+### Create a VM from a Snapshot
 
 - Navigate to the Snapshot and create a Disk
 
