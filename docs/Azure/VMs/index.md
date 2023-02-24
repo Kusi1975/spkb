@@ -30,14 +30,18 @@ Start the VM and install all Windows Updates and reboot
 
 After reboot start PowerShell:
 
-```powershell
-sfc.exe /scannow
+In Cmd:
 
-netsh.exe winhttp reset proxy
+```cmd
+sfc.exe /scannow
 
 diskpart.exe
 san policy=onlineall
 exit
+```
+
+```powershell
+netsh.exe winhttp reset proxy
 
 Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation -Name RealTimeIsUniversal -Value 1 -Type DWord -Force
 Set-Service -Name w32time -StartupType Automatic
@@ -91,6 +95,8 @@ New-NetFirewallRule -DisplayName AzurePlatform -Direction Outbound -RemoteAddres
 chkdsk.exe /f
 ```
 
+Reboot VM
+
 In Cmd:
 
 ```cmd
@@ -136,14 +142,18 @@ In CMD:
 mmc.exe
 ```
 
+File / Add or Remove Snap-ins
+Add **Group Policy Object Editor** for **Local Computer**
+Navigate to **Configuration\Windows Settings\Security Settings\Local Policies\User Rights Assignment**
+
 Check they're not blocked:
 
 ```regedit
-Computer Configuration\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Deny access to this computer from the network
+Deny access to this computer from the network
 ```
 
 ```regedit
-Computer Configuration\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Deny log on through Remote Desktop Services
+Deny log on through Remote Desktop Services
 ```
 
 The following groups should be listet:
@@ -153,7 +163,9 @@ The following groups should be listet:
 - Everyone
 - Users
 
-### Upload VM
+### Upload VM Disk
+
+The Subscription must have **Microsoft.Network** and **Microsoft.Compute** registered under **Resource providers**
 
 Open in Browser [Azure Portal](https://portal.azure.com)
 
@@ -174,6 +186,8 @@ Install "Microsoft Azure Storage Explorer" and start it.
 Select the file, enter a name and change account type to "Standard SSD" and click "Create" to upload the VM. This create a Disk in Azure after upload.
 
 ![MASE Upload](./assets/MASEUpload.png)
+
+### Create VM from a VM Disk
 
 Open in Browser [Azure Portal](https://portal.azure.com)
 
