@@ -156,7 +156,13 @@ Deny access to this computer from the network
 Deny log on through Remote Desktop Services
 ```
 
-The following groups should be listet:
+Check the:
+
+```regedit
+Access this computer from the network
+```
+
+that the following groups should be listet:
 
 - Administrators
 - Backup Operators
@@ -202,6 +208,11 @@ In PowerShell:
 ```powershell
 Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management' -Name PagingFiles -Value 'D:\pagefile.sys' -Type MultiString -Force
 ```
+
+In Azure Portal
+Navigate to the VM
+Navigate to **Oveview** and Shutdown the VM
+Navigate to **Auto-shutdown** set **Enabled** to **on** and define a Time and click on **Save**.
 
 ### Create a Snapshot from a VM
 

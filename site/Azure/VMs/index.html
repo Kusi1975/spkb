@@ -1195,7 +1195,10 @@ Navigate to <strong>Configuration\Windows Settings\Security Settings\Local Polic
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Deny log on through Remote Desktop Services
 </code></pre></div>
-<p>The following groups should be listet:</p>
+<p>Check the:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Access this computer from the network
+</code></pre></div>
+<p>that the following groups should be listet:</p>
 <ul>
 <li>Administrators</li>
 <li>Backup Operators</li>
@@ -1224,8 +1227,12 @@ Navigate to <strong>Configuration\Windows Settings\Security Settings\Local Polic
 <p><img alt="Create VM" src="assets/AzureCreateVM.png" /></p>
 <h3 id="first-run-in-azure">First Run in Azure<a class="headerlink" href="#first-run-in-azure" title="Permanent link">&para;</a></h3>
 <p>In PowerShell:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management&#39;</span> <span class="n">-Name</span> <span class="n">PagingFiles</span> <span class="n">-Value</span> <span class="s1">&#39;D:\pagefile.sys&#39;</span> <span class="n">-Type</span> <span class="n">MultiString</span> <span class="n">-Force</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management&#39;</span> <span class="n">-Name</span> <span class="n">PagingFiles</span> <span class="n">-Value</span> <span class="s1">&#39;D:\pagefile.sys&#39;</span> <span class="n">-Type</span> <span class="n">MultiString</span> <span class="n">-Force</span>
 </code></pre></div>
+<p>In Azure Portal
+Navigate to the VM
+Navigate to <strong>Oveview</strong> and Shutdown the VM
+Navigate to <strong>Auto-shutdown</strong> set <strong>Enabled</strong> to <strong>on</strong> and define a Time and click on <strong>Save</strong>.</p>
 <h3 id="create-a-snapshot-from-a-vm">Create a Snapshot from a VM<a class="headerlink" href="#create-a-snapshot-from-a-vm" title="Permanent link">&para;</a></h3>
 <p>In Azure:</p>
 <ul>
