@@ -1226,6 +1226,8 @@ Navigate to <strong>Configuration\Windows Settings\Security Settings\Local Polic
 <p>In PowerShell:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management&#39;</span> <span class="n">-Name</span> <span class="n">PagingFiles</span> <span class="n">-Value</span> <span class="s1">&#39;D:\pagefile.sys&#39;</span> <span class="n">-Type</span> <span class="n">MultiString</span> <span class="n">-Force</span>
 </code></pre></div>
+<p>After Shutdown the VM:
+In Azure Portal navigate to the VM and select <strong>Auto-shutdown</strong> set <strong>Enabled</strong> to <strong>on</strong> and define a Time and click on <strong>Save</strong>.</p>
 <h3 id="create-a-snapshot-from-a-vm">Create a Snapshot from a VM<a class="headerlink" href="#create-a-snapshot-from-a-vm" title="Permanent link">&para;</a></h3>
 <p>In Azure:</p>
 <ul>
