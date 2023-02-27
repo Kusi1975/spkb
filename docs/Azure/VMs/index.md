@@ -33,11 +33,11 @@ After reboot start PowerShell:
 In Cmd:
 
 ```cmd
-sfc.exe /scannow
-
 diskpart.exe
 san policy=onlineall
 exit
+
+sfc.exe /scannow
 ```
 
 ```powershell
@@ -130,10 +130,17 @@ Set-Service -Name WerSvc -StartupType Manual
 winmgmt.exe /verifyrepository
 ```
 
-Make sure no other applications than TermService are using port
+Make sure no other applications than TermService are using port 3389
 
 ```powershell
-netstat.exe -anob
+netstat.exe -anob | findstr :3389
+TCP    0.0.0.0:3389           0.0.0.0:0              LISTENING       4056
+TCP    [::]:3389              [::]:0                 LISTENING       4056
+UDP    0.0.0.0:3389           *:*                                    4056
+UDP    [::]:3389              *:*                                    4056
+
+tasklist /svc | findstr 4056
+svchost.exe                   4056 TermService
 ```
 
 In CMD:
@@ -165,7 +172,7 @@ Access this computer from the network
 that the following groups should be listet:
 
 - Administrators
-- Backup Operators
+- (Backup Operators)
 - Everyone
 - Users
 
