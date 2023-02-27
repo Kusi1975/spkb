@@ -212,9 +212,15 @@ Open in Browser [Azure Portal](https://portal.azure.com)
 
 In PowerShell:
 
+Open File Explorer and check the drive letter for the **Temporary Storage**
+
+![Temporary Storage](./assets/AzureTemporaryStorage.png)
+
 ```powershell
-Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management' -Name PagingFiles -Value 'D:\pagefile.sys' -Type MultiString -Force
+Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management' -Name PagingFiles -Value '<Drive Letter>:\pagefile.sys' -Type MultiString -Force
 ```
+
+Reboot the VM
 
 In Azure Portal
 Navigate to the VM
