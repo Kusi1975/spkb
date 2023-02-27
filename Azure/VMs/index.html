@@ -1234,8 +1234,11 @@ Navigate to <strong>Configuration\Windows Settings\Security Settings\Local Polic
 <p><img alt="Create VM" src="assets/AzureCreateVM.png" /></p>
 <h3 id="first-run-in-azure">First Run in Azure<a class="headerlink" href="#first-run-in-azure" title="Permanent link">&para;</a></h3>
 <p>In PowerShell:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management&#39;</span> <span class="n">-Name</span> <span class="n">PagingFiles</span> <span class="n">-Value</span> <span class="s1">&#39;D:\pagefile.sys&#39;</span> <span class="n">-Type</span> <span class="n">MultiString</span> <span class="n">-Force</span>
+<p>Open File Explorer and check the drive letter for the <strong>Temporary Storage</strong></p>
+<p><img alt="Temporary Storage" src="assets/AzureTemporaryStorage.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management&#39;</span> <span class="n">-Name</span> <span class="n">PagingFiles</span> <span class="n">-Value</span> <span class="s1">&#39;&lt;Drive Letter&gt;:\pagefile.sys&#39;</span> <span class="n">-Type</span> <span class="n">MultiString</span> <span class="n">-Force</span>
 </code></pre></div>
+<p>Reboot the VM</p>
 <p>In Azure Portal
 Navigate to the VM
 Navigate to <strong>Oveview</strong> and Shutdown the VM
