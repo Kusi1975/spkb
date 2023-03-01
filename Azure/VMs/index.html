@@ -1239,6 +1239,8 @@ Navigate to <strong>Configuration\Windows Settings\Security Settings\Local Polic
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s1">&#39;HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management&#39;</span> <span class="n">-Name</span> <span class="n">PagingFiles</span> <span class="n">-Value</span> <span class="s1">&#39;&lt;Drive Letter&gt;:\pagefile.sys&#39;</span> <span class="n">-Type</span> <span class="n">MultiString</span> <span class="n">-Force</span>
 </code></pre></div>
 <p>Reboot the VM</p>
+<p>Check if <strong>Temporary Storage</strong> now not empty.</p>
+<p>Shutdown the VM</p>
 <p>In Azure Portal
 Navigate to the VM
 Navigate to <strong>Oveview</strong> and Shutdown the VM
@@ -1250,20 +1252,34 @@ Navigate to <strong>Auto-shutdown</strong> set <strong>Enabled</strong> to <stro
 </ul>
 <p><img alt="Create Snapshot" src="assets/AzureCreateSnapshot.png" /></p>
 <ul>
-<li>Make a Full Snapshot and change storage type to "Standard HDD"</li>
+<li>Select the Subscription, Enter the Name of the VM.</li>
+<li>Snapshot type must be <strong>Full</strong></li>
+<li>Change storage type default is <strong>Zone-redundant</strong></li>
 </ul>
 <p><img alt="Create Snapshot" src="assets/AzureCreateSnapshotDialog.png" /></p>
 <h3 id="create-a-vm-from-a-snapshot">Create a VM from a Snapshot<a class="headerlink" href="#create-a-vm-from-a-snapshot" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Navigate to the Snapshot and create a Disk</li>
+<li>Navigate to the Snapshot and click on <strong>Create Disk</strong></li>
 </ul>
 <p><img alt="Create Disk" src="assets/AzureDiskFromSnapshot.png" /></p>
-<p>Change storage type to "Standard SSD"</p>
+<ul>
+<li>Select the Subscription, Enter the Name of the Snapshot.</li>
+<li>Choose the Availibity Zone</li>
+<li>Change storage type to <strong>Standard SSD</strong></li>
+</ul>
 <p><img alt="Create Disk" src="assets/AzureCreateDisk.png" /></p>
 <ul>
-<li>Naviagte to the Disk and create a VM</li>
+<li>Naviagte to the Disk and <strong>Create VM</strong></li>
 </ul>
 <p><img alt="Create VM" src="assets/AzureCreateVM.png" /></p>
+<ul>
+<li>Select the Subscription, Enter the Name of the VM.</li>
+<li>Select th Availabity option, for DEV VMs can you also be choose <strong>No infrastructure redundancy requeried</strong>.</li>
+<li>Choose the Size for use we use the <strong>D4s_v3</strong> with 4 vCPUs and 16GB.</li>
+<li>Choose the License Type as example <strong>Windows Server</strong></li>
+<li>If you have already have a license you can select booth checkboxes.</li>
+</ul>
+<p><img alt="Create VM" src="assets/AzureCreateVMDialog.png" /></p>
 <h3 id="startstop-vm">Start/Stop VM<a class="headerlink" href="#startstop-vm" title="Permanent link">&para;</a></h3>
 <p>Create resource "Start/Stop VMs during off hours - V2"</p>
 <p><img alt="Start/Stop VMs during off hours - V2" src="assets/AzureStartStop.png" /></p>
