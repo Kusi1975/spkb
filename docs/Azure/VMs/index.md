@@ -222,6 +222,10 @@ Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\M
 
 Reboot the VM
 
+Check if **Temporary Storage** now not empty.
+
+Shutdown the VM
+
 In Azure Portal
 Navigate to the VM
 Navigate to **Oveview** and Shutdown the VM
@@ -235,23 +239,35 @@ In Azure:
 
 ![Create Snapshot](./assets/AzureCreateSnapshot.png)
 
-- Make a Full Snapshot and change storage type to "Standard HDD"
+- Select the Subscription, Enter the Name of the VM.
+- Snapshot type must be **Full**
+- Change storage type default is **Zone-redundant**
 
 ![Create Snapshot](./assets/AzureCreateSnapshotDialog.png)
 
 ### Create a VM from a Snapshot
 
-- Navigate to the Snapshot and create a Disk
+- Navigate to the Snapshot and click on **Create Disk**
 
 ![Create Disk](./assets/AzureDiskFromSnapshot.png)
 
-Change storage type to "Standard SSD"
+- Select the Subscription, Enter the Name of the Snapshot.
+- Choose the Availibity Zone
+- Change storage type to **Standard SSD**
 
 ![Create Disk](./assets/AzureCreateDisk.png)
 
-- Naviagte to the Disk and create a VM
+- Naviagte to the Disk and **Create VM**
 
 ![Create VM](./assets/AzureCreateVM.png)
+
+- Select the Subscription, Enter the Name of the VM.
+- Select th Availabity option, for DEV VMs can you also be choose **No infrastructure redundancy requeried**.
+- Choose the Size for use we use the **D4s_v3** with 4 vCPUs and 16GB.
+- Choose the License Type as example **Windows Server**
+- If you have already have a license you can select booth checkboxes.
+
+![Create VM](./assets/AzureCreateVMDialog.png)
 
 ### Start/Stop VM
 
