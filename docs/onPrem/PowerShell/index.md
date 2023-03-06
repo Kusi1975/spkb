@@ -2,20 +2,26 @@
 
 ## OnPrem PowerShell
 
-### Update Content Database
+### Load SharePoint script
+
+```powershell
+Add-PSSnapin Microsoft.SharePoint.PowerShell -ErrorAction SilentlyContinue
+```
+
+### Update content database
 
 ```powershell
 Get-SPContentDatabase |% { Upgrade-SPContentDatabase -Identity $_.Id -Confirm:$false }
 ```
 
-### Update CA Content Database
+### Update CA content database
 
 ```powershell
 $wa = Get-SPWebApplication -IncludeCentralAdministration | Where { $_.DefaultServerComment -eq "SharePoint Central Administration v4"}
 Get-SPContentDatabase -WebApplication $wa |% { Upgrade-SPContentDatabase -Identity $_.Id -Confirm:$false }
 ```
 
-### New Developer Certificate
+### New developer certificate
 
 ```powershell
 Import-Module WebAdministration
@@ -36,8 +42,26 @@ Open IIS and change the Binding Certificate
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 ```
 
-### Get all loaded Assemblies in Powershell
+### Get all loaded assemblies in Powershell
 
 ```powershell
 [System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object Location | Sort-Object -Property FullName | Select-Object -Property Name, Location, Version | Out-GridView
 ```
+
+### Script as scheduled task
+
+Select **Run whetever user is logged on or not** and **Run with highest privileges**
+
+![Scheduled Task](./assets/ScheduledTask.png)
+
+Add a Trigger with the repeating interval you want.
+
+![Scheduled Task Trigger](./assets/ScheduledTaskTrigger.png)
+
+Add an Action with the values:
+
+- Program/script: **C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe**
+- Add arguments: **-ExecutionPolicy Bypass -File "[Path]\\[Scriptname].ps1"**
+- Start in: **[Path]**
+
+![Scheduled Task Action](./assets/ScheduledTaskAction.png)
