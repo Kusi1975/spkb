@@ -208,6 +208,16 @@ Open in Browser [Azure Portal](https://portal.azure.com)
 
 ![Create VM](./assets/AzureCreateVM.png)
 
+- Select the Subscription, Enter the Name of the VM.
+- Snapshot type must be **Full**
+- Change storage type default is **Zone-redundant**
+
+![Create Snapshot](./assets/AzureCreateSnapshotDialog.png)
+
+Optional: Select the virtual machine and enter a DNS name:
+
+![DNS Name](./assets/AzureDnsName.png)
+
 ### First Run in Azure
 
 In PowerShell:
