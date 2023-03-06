@@ -581,6 +581,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#connect-with-current-credentials" class="md-nav__link">
+    Connect with current credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-with-web-login-credentials" class="md-nav__link">
+    Connect with web login credentials
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -983,6 +997,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#connect-with-current-credentials" class="md-nav__link">
+    Connect with current credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-with-web-login-credentials" class="md-nav__link">
+    Connect with web login credentials
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1017,6 +1045,12 @@
 </code></pre></div>
 <h3 id="get-pnp-module">Get PnP Module<a class="headerlink" href="#get-pnp-module" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Get-Module</span> <span class="n">SharePointPnPPowerShell</span><span class="p">*</span> <span class="n">-ListAvailable</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span><span class="n">Version</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">Version</span> <span class="n">-Descending</span>
+</code></pre></div>
+<h3 id="connect-with-current-credentials">Connect with current credentials<a class="headerlink" href="#connect-with-current-credentials" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Connect-PnPOnline</span> <span class="n">-Url</span> <span class="n">https</span><span class="p">://</span><span class="no">[Url]</span> <span class="n">-CurrentCredentials</span>
+</code></pre></div>
+<h3 id="connect-with-web-login-credentials">Connect with web login credentials<a class="headerlink" href="#connect-with-web-login-credentials" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Connect-PnPOnline</span> <span class="n">-Url</span> <span class="n">https</span><span class="p">://</span><span class="no">[Url]</span> <span class="n">-UseWebLogin</span>
 </code></pre></div>
 
 
