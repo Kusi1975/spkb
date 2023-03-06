@@ -19,3 +19,15 @@ Update-Module SharePointPnPPowerShell*
 ```powershell
 Get-Module SharePointPnPPowerShell* -ListAvailable | Select-Object Name,Version | Sort-Object Version -Descending
 ```
+
+### Connect with current credentials
+
+```powershell
+Connect-PnPOnline -Url https://[Url] -CurrentCredentials
+```
+
+### Connect with web login credentials
+
+```powershell
+Connect-PnPOnline -Url https://[Url] -UseWebLogin
+```
