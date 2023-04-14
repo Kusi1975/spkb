@@ -17,4 +17,4 @@ SPFx Version 1.1.0 is supplied with SharePoint Feature Pack 2 (corresponds to CU
 |React|15.4.2|15.6.2|15.6.2|17.0.1|
 |Yeoman|3.x|3.x|3.x|3.x|4.x|
 |Gulp|4.x|4.x|4.x|4.x|
-|@microsoft/generator-sharepoint|1.17.1|1.17.1|1.17.1|1.17.1|
+|\@microsoft/generator-sharepoint|1.17.1|1.17.1|1.17.1|1.17.1|
