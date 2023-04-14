@@ -974,13 +974,14 @@
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>In the past, if you wanted to build custom reusable WebParts, you had to write server code that had to be installed server-side directly on the server. Since SharePoint 2016 with Feature Pack 2, there is a possibility to package a Clientside WebPart that can be stored in the App Catalog Site Collection. If you have the appropriate rights, the package can be installed without having to connect directly to the server, and the package can also be replaced without provoking an app pool reset, meaning there is no down time. In this guide, I would like to offer you a "step-by-step" guide that will help you to create an SPFx package for SP2016, SP2019 or SharePoint Online.</p>
 <h2 id="versions">Versions<a class="headerlink" href="#versions" title="Permanent link">&para;</a></h2>
-<p>SPFx Version 1.1.0 is supplied with SharePoint Feature Pack 2 (corresponds to CU 09.17). SPFx 1.4.1 is included with SharePoint 2019/SE. SharePoint Online currently uses 1.16.1</p>
+<p>SPFx Version 1.1.0 is supplied with SharePoint Feature Pack 2 (corresponds to CU 09.17). SPFx 1.4.1 is included with SharePoint 2019/SE. SE get SPFx 1.5.1 with the March 2023 Patch. SharePoint Online currently uses 1.17.1</p>
 <table>
 <thead>
 <tr>
 <th></th>
 <th>SP2016</th>
-<th>SP2019/SE</th>
+<th>SP2019</th>
+<th>SPSE</th>
 <th>SPOnline</th>
 </tr>
 </thead>
@@ -989,10 +990,12 @@
 <td>SPFx</td>
 <td>1.1.0</td>
 <td>1.4.1</td>
-<td>1.16.1</td>
+<td>1.5.1</td>
+<td>1.17.1</td>
 </tr>
 <tr>
 <td>Node.js</td>
+<td>6.x/8.x</td>
 <td>6.x/8.x</td>
 <td>6.x/8.x</td>
 <td>16.13+</td>
@@ -1001,11 +1004,13 @@
 <td>NPM</td>
 <td>v3/v4</td>
 <td>v3/v4</td>
+<td>v3/v4</td>
 <td>v5/v6/v7/v8</td>
 </tr>
 <tr>
 <td>TypeScript</td>
 <td>2.2.2</td>
+<td>2.4.2</td>
 <td>2.4.2</td>
 <td>3.3</td>
 </tr>
@@ -1013,25 +1018,29 @@
 <td>React</td>
 <td>15.4.2</td>
 <td>15.6.2</td>
+<td>15.6.2</td>
 <td>17.0.1</td>
 </tr>
 <tr>
 <td>Yeoman</td>
 <td>3.x</td>
 <td>3.x</td>
-<td>4.x</td>
+<td>3.x</td>
+<td>3.x</td>
 </tr>
 <tr>
 <td>Gulp</td>
 <td>4.x</td>
 <td>4.x</td>
 <td>4.x</td>
+<td>4.x</td>
 </tr>
 <tr>
 <td><a class="magiclink magiclink-github magiclink-repository" href="https://github.com/microsoft/generator-sharepoint" title="GitHub Repository: microsoft/generator-sharepoint">microsoft/generator-sharepoint</a></td>
-<td>1.16.1</td>
-<td>1.16.1</td>
-<td>1.16.1</td>
+<td>1.17.1</td>
+<td>1.17.1</td>
+<td>1.17.1</td>
+<td>1.17.1</td>
 </tr>
 </tbody>
 </table>
