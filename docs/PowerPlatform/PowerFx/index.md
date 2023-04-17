@@ -2,6 +2,10 @@
 
 ## PowerPlatform
 
+### Learning
+
+[App in a day](https://aka.ms/appinaday)
+
 ### Power Fx Examples
 
 #### Update item OnSelect event
