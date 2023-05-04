@@ -14,7 +14,15 @@ Install-Module -Name PnP.PowerShell -Force
 Connect-PnPOnline -Url https://<url> -Interactive
 ```
 
-### Query more than 5000 Elements
+### Login with certificate
+
+```powershell
+
+Register-PnPAzureADApp -ApplicationName "PnPPowerShell" -Store CurrentUser -Tenant <Tenant>.onmicrosoft.com -Interactive
+Connect-PnPOnline -Url https://<url> -ClientId <ClientId> -Thumbprint <Thumbprint> -Tenant <Tenant>.onmicrosoft.com
+```
+
+### Query more than 5000 elements
 
 ```powershell
 Connect-PnPOnline ...
