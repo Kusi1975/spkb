@@ -32,7 +32,7 @@ This blog is a collection of useful things that I need in everyday work from tim
 
 ## Power Platform
 
-[Power Platform](./PowerPlatform/PowerFx/index.md)
+[Power Platform](./PowerPlatform/index.md)
 
 ## M365
 

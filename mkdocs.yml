@@ -23,6 +23,7 @@ nav:
         - Migrate SPFx 2016 to 2019: onPrem/SPFx/migrate16to19.md
     - PowerShell: onPrem/PowerShell/index.md
   - PowerPlatform: 
+    - PowerPlatform: PowerPlatform/index.md
     - PowerFx: PowerPlatform/PowerFx/index.md
     - Center of Excellence: PowerPlatform/CoE/index.md
   - React: 
