@@ -26,3 +26,17 @@ Wait on Promise from Sub Async functions in a loop.
         });
     }
 ```
+
+### Get Url Parameter
+
+```javascript
+private GetUrlParameters(): { [id: string]: string } {
+    const params: { [id: string]: string } = {};
+    document.location.search.substring(1).split('&').forEach(t => {
+      if (t.indexOf('=') > 0) {
+        params[t.substring(0, t.indexOf('=')).toLowerCase()] = decodeURIComponent(t.substring(t.indexOf('=') + 1));
+      }
+    });
+    return params;
+}
+```
