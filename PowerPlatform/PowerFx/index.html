@@ -16,7 +16,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../CoE/">
+        <link rel="next" href="../Flow/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
@@ -805,8 +805,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#update-item-onselect-event" class="md-nav__link">
-    Update item OnSelect event
+  <a href="#show-another-canvas" class="md-nav__link">
+    Show another Canvas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-item-with-specific-values" class="md-nav__link">
+    Update item with specific values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-form" class="md-nav__link">
+    Save Form
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-selected-item" class="md-nav__link">
+    Remove selected item
   </a>
   
 </li>
@@ -814,6 +835,20 @@
           <li class="md-nav__item">
   <a href="#display-labels-from-multi-termfield" class="md-nav__link">
     Display labels from Multi TermField
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#highlight-selected-entry-in-gallery-in-templatefill-property" class="md-nav__link">
+    Highlight selected Entry in Gallery in TemplateFill property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-form" class="md-nav__link">
+    New Form
   </a>
   
 </li>
@@ -832,6 +867,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Flow/" class="md-nav__link">
+        Flow
+      </a>
     </li>
   
 
@@ -1019,8 +1068,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#update-item-onselect-event" class="md-nav__link">
-    Update item OnSelect event
+  <a href="#show-another-canvas" class="md-nav__link">
+    Show another Canvas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-item-with-specific-values" class="md-nav__link">
+    Update item with specific values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-form" class="md-nav__link">
+    Save Form
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-selected-item" class="md-nav__link">
+    Remove selected item
   </a>
   
 </li>
@@ -1028,6 +1098,20 @@
           <li class="md-nav__item">
   <a href="#display-labels-from-multi-termfield" class="md-nav__link">
     Display labels from Multi TermField
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#highlight-selected-entry-in-gallery-in-templatefill-property" class="md-nav__link">
+    Highlight selected Entry in Gallery in TemplateFill property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-form" class="md-nav__link">
+    New Form
   </a>
   
 </li>
@@ -1065,11 +1149,36 @@
 <h3 id="learning">Learning<a class="headerlink" href="#learning" title="Permanent link">&para;</a></h3>
 <p><a href="https://aka.ms/appinaday">App in a day</a></p>
 <h3 id="power-fx-examples">Power Fx Examples<a class="headerlink" href="#power-fx-examples" title="Permanent link">&para;</a></h3>
-<h4 id="update-item-onselect-event">Update item OnSelect event<a class="headerlink" href="#update-item-onselect-event" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Patch</span><span class="p">(</span><span class="o">&lt;</span><span class="n">DataSource</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">GalleryName</span><span class="o">&gt;</span><span class="p">.</span><span class="n">Selected</span><span class="p">,{</span><span class="o">&lt;</span><span class="n">Field1</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">Value1</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">Field2</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">Value2</span><span class="o">&gt;</span><span class="p">});</span><span class="n">Refresh</span><span class="p">(</span><span class="o">&lt;</span><span class="n">DataSource</span><span class="o">&gt;</span><span class="p">)</span>
+<h4 id="show-another-canvas">Show another Canvas<a class="headerlink" href="#show-another-canvas" title="Permanent link">&para;</a></h4>
+<p>On Button the OnSelect property</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Navigate</span><span class="p">(</span><span class="o">&lt;</span><span class="n">CanvasName</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="update-item-with-specific-values">Update item with specific values<a class="headerlink" href="#update-item-with-specific-values" title="Permanent link">&para;</a></h4>
+<p>On Button the OnSelect property</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Patch</span><span class="p">(</span><span class="o">&lt;</span><span class="n">DataSource</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">GalleryName</span><span class="o">&gt;</span><span class="p">.</span><span class="n">Selected</span><span class="p">,{</span><span class="o">&lt;</span><span class="n">Field1</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">Value1</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">Field2</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">Value2</span><span class="o">&gt;</span><span class="p">});</span><span class="n">Refresh</span><span class="p">(</span><span class="o">&lt;</span><span class="n">DataSource</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="save-form">Save Form<a class="headerlink" href="#save-form" title="Permanent link">&para;</a></h4>
+<p>On Button the OnSelect property</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">SubmitForm</span><span class="p">(</span><span class="o">&lt;</span><span class="n">FormName</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="remove-selected-item">Remove selected item<a class="headerlink" href="#remove-selected-item" title="Permanent link">&para;</a></h4>
+<p>On Button the OnSelect property</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Remove</span><span class="p">(</span><span class="o">&lt;</span><span class="n">DataSource</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">GalleryName</span><span class="o">&gt;</span><span class="p">.</span><span class="n">Selected</span><span class="p">);</span><span class="n">Refresh</span><span class="p">(</span><span class="o">&lt;</span><span class="n">DataSource</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="display-labels-from-multi-termfield">Display labels from Multi TermField<a class="headerlink" href="#display-labels-from-multi-termfield" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Concat</span><span class="p">(</span><span class="n">ThisItem</span><span class="p">.</span><span class="o">&lt;</span><span class="n">TermField</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Label</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;;&quot;</span><span class="p">)</span>
+<p>On Label the Text property</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Concat</span><span class="p">(</span><span class="n">ThisItem</span><span class="p">.</span><span class="o">&lt;</span><span class="n">TermField</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">Label</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;;&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="highlight-selected-entry-in-gallery-in-templatefill-property">Highlight selected Entry in Gallery in TemplateFill property<a class="headerlink" href="#highlight-selected-entry-in-gallery-in-templatefill-property" title="Permanent link">&para;</a></h4>
+<p>On Gallery the OnSelect property</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">If</span><span class="p">(</span><span class="n">ThisItem</span><span class="p">.</span><span class="n">IsSelected</span><span class="p">,</span><span class="w"> </span><span class="n">RGBA</span><span class="p">(</span><span class="m">128</span><span class="p">,</span><span class="w"> </span><span class="m">128</span><span class="p">,</span><span class="w"> </span><span class="m">128</span><span class="p">,</span><span class="w"> </span><span class="m">0.2</span><span class="p">),</span><span class="w">  </span><span class="n">RGBA</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">))</span>
+</code></pre></div>
+<h4 id="new-form">New Form<a class="headerlink" href="#new-form" title="Permanent link">&para;</a></h4>
+<p>On Canvas the OnVisible property</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">NewForm</span><span class="p">(</span><span class="o">&lt;</span><span class="n">EditFormName</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre></div>
+<p>On EditForm the DefaultMode property</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">FormMode</span><span class="p">.</span><span class="n">New</span>
 </code></pre></div>
 
 
