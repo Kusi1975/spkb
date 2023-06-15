@@ -4,6 +4,8 @@
 
 ### Send Mail on add item depend on a lookup value from a Dataverse table
 
+![Flow](assets/SendMailOnAddItemDataverse.png)
+
 - Add Action **Add a new row Dataverse**
 
   |Property   |Value            |
@@ -26,6 +28,8 @@
   |Input   |&lt;LookupFieldName&gt;|
 
 - Add Action **Send an email (v2) Outlook**
+
+  If you have multi Compose, split each with a semicolon
 
   |Property|Value  |
   |--------|-------|
