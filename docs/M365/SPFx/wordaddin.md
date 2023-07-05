@@ -156,7 +156,7 @@ export const LoginOutButtons = () => {
 
 Add following lines to index.tsx
 
-```javascript
+```typescript
 ...
 import { PublicClientApplication } from "@azure/msal-browser";
 import { msalConfig } from "./authConfig";
@@ -174,7 +174,7 @@ const msalInstance: PublicClientApplication = new PublicClientApplication(msalCo
 
 Add following lines to App.tsx
 
-```javascript
+```typescript
 import { MsalContext } from "@azure/msal-react";
 import { AccountInfo, IPublicClientApplication, RedirectRequest } from "@azure/msal-browser";
 ...

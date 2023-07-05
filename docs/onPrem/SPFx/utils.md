@@ -130,14 +130,3 @@ await stores[0].getTermSetById(termGUID).terms.get().then((resp2: ITermData[]) =
   ...
 });
 ```
-## Caching
-
-Save object in cache
-```typescript
-localStorage.setItem(storageKey, object);
-```
-
-Get object from cache
-```typescript
-const object = localStorage.getItem(storageKey);
-```
