@@ -40,3 +40,35 @@ private GetUrlParameters(): { [id: string]: string } {
     return params;
 }
 ```
+
+## Caching
+
+Save object in cache
+```typescript
+localStorage.setItem(storageKey, object);
+```
+
+Get object from cache
+```typescript
+const object = localStorage.getItem(storageKey);
+```
+
+## Interval
+
+```typescript
+private interval: number = undefined;
+
+public componentDidMount(): void {
+    if (!this.interval) {
+        this.interval = setInterval(() => {
+            ...
+        }, 1000);
+    }
+}
+
+public componentWillUnmount(): void {
+    if (this.interval) {
+        clearInterval(this.interval);
+    }
+}
+```

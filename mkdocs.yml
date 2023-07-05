@@ -8,13 +8,16 @@ nav:
     - VMs: Azure/VMs/index.md
   - M365: 
     - PnP: M365/PnP/index.md
-    - SPFx: M365/SPFx/index.md
+    - SPFx:
+      - Tips: M365/SPFx/index.md
+      - Word Add-In: M365/SPFx/wordaddin.md
     - PowerShell: M365/PowerShell/index.md
   - OnPrem: 
     - SharePoint: onPrem/SP/index.md
     - PnP: onPrem/PnP/index.md
     - SPFx:
       - Tips: onPrem/SPFx/index.md
+      - Utils: onPrem/SPFx/utils.md
       - Manual:
         - Introduction: onPrem/SPFx/intro.md
         - Development environment: onPrem/SPFx/devenv.md
