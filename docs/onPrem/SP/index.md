@@ -64,7 +64,7 @@ namespace [Namespace]
 {
     class [ServiceName] : [InterfaceServiceName]
     {
-        public string [FunctionName](string prop)
+        public string [FunctionName](string [PropertyName])
         {
         }
     }
@@ -83,9 +83,15 @@ namespace [Namespace]
     interface [IntefaceServiceName]
     {
         [OperationContract]
-        [WebGet(UriTemplate = "[ServiceFunctionName]/{prop}",
+        [WebGet(UriTemplate = "[ServiceFunctionName]/{[PropertyName]}",
             ResponseFormat = WebMessageFormat.Json)]
-        string [FunctionName](string prop);
+        string [FunctionName](string [PropertyName]);
     }
 }
+```
+
+Create a WSP with **Publish** the Project and deploy the WSP to the server. After deployment the service can called like:
+
+```
+https://[SharePointWebUrl]/_vti_bin/[FolderStructureBelowISAPI][ServiceName].svc/[ServiceFunctionName]/[PropertyName]
 ```
