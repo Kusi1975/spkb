@@ -18,6 +18,8 @@ nav:
     - SPFx:
       - Tips: onPrem/SPFx/index.md
       - Utils: onPrem/SPFx/utils.md
+      - SPFxCam: onPrem/SPFx/spfxCam.md
+      - MegaMenu: onPrem/SPFx/megaMenu.md
       - Manual:
         - Introduction: onPrem/SPFx/intro.md
         - Development environment: onPrem/SPFx/devenv.md
