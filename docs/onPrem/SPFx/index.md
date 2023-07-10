@@ -179,6 +179,40 @@ this.props.spHttpClient.post(
     });
 ```
 
+### Search 
+
+```typescript
+const postData: string = JSON.stringify({
+    'request': {
+        '__metadata': {
+            'type': 'Microsoft.Office.Server.Search.REST.SearchRequest' 
+        },
+        'Querytext': `ContentTypeId:"${contentTypeId}*" ${queryText ? `"${queryText}" ` : ''}`
+    } 
+});
+
+SPHttpClient.post(
+    `${this.props.siteurl}/_api/search/postquery`,
+    SPHttpClient.configurations.v1, {
+        headers: {
+            'odata-version': '3.0',
+            'Accept': 'application/json;odata=verbose',
+            'Content-Type': 'application/json;odata=verbose',
+            'Content-Length': postData.length.toString()
+        },
+        body: postData,
+        method: 'POST'
+    }
+)
+.then(response => response.json())
+.then(response => {
+    if (!(response)) {
+        return;
+    }
+    resolve(response.d.postquery.PrimaryQueryResult.RelevantResults.Table.Rows.results);
+});
+```
+
 ### Send Mail
 
 ```typescript
