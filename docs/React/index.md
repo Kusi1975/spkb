@@ -41,6 +41,12 @@ private GetUrlParameters(): { [id: string]: string } {
 }
 ```
 
+## Get all Properties
+
+```typescript
+Object.keys(item).foreach(k => item[k])
+```
+
 ## Caching
 
 Save object in cache
