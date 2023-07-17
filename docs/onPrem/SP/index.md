@@ -95,3 +95,35 @@ Create a WSP with **Publish** the Project and deploy the WSP to the server. Afte
 ```
 https://[SharePointWebUrl]/_vti_bin/[FolderStructureBelowISAPI][ServiceName].svc/[ServiceFunctionName]/[PropertyName]
 ```
+
+### Custom Url protocol handler
+
+With a custom Url protocol handler you can open from the browser a custom application with parameter. 
+
+Example call:
+```html
+<a href="myhandler:paramater">test</a>
+```
+
+Registry Entry:
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\myhandler]
+"URL Protocol"="myhandler"
+
+[HKEY_CLASSES_ROOT\myhandler\shell]
+
+[HKEY_CLASSES_ROOT\myhandler\shell\open]
+
+[HKEY_CLASSES_ROOT\myhandler\shell\open\command]
+@="C:\\Programm Files\\myhandler\\myhandler.exe \"%1\""
+```
+
+c# Console or Forms App
+```csharp
+static void Main(string[] args)
+{
+    args[0] // returns myhandler:paramater
+}
+```
