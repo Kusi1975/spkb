@@ -622,6 +622,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#custom-url-protocol-handler" class="md-nav__link">
+    Custom Url protocol handler
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1129,6 +1136,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#custom-url-protocol-handler" class="md-nav__link">
+    Custom Url protocol handler
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1216,6 +1230,30 @@
 <p>Create a WSP with <strong>Publish</strong> the Project and deploy the WSP to the server. After deployment the service can called like:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>https://[SharePointWebUrl]/_vti_bin/[FolderStructureBelowISAPI][ServiceName].svc/[ServiceFunctionName]/[PropertyName]
 </code></pre></div>
+<h3 id="custom-url-protocol-handler">Custom Url protocol handler<a class="headerlink" href="#custom-url-protocol-handler" title="Permanent link">&para;</a></h3>
+<p>With a custom Url protocol handler you can open from the browser a custom application with parameter. </p>
+<p>Example call:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;myhandler:paramater&quot;</span><span class="p">&gt;</span>test<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p>Registry Entry:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Windows Registry Editor Version 5.00
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>[HKEY_CLASSES_ROOT\myhandler]
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>&quot;URL Protocol&quot;=&quot;myhandler&quot;
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>[HKEY_CLASSES_ROOT\myhandler\shell]
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>[HKEY_CLASSES_ROOT\myhandler\shell\open]
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>[HKEY_CLASSES_ROOT\myhandler\shell\open\command]
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>@=&quot;C:\\Programm Files\\myhandler\\myhandler.exe \&quot;%1\&quot;&quot;
+</code></pre></div></p>
+<p>c# Console or Forms App
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="n">args</span><span class="p">[</span><span class="m">0</span><span class="p">]</span><span class="w"> </span><span class="c1">// returns myhandler:paramater</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">}</span>
+</code></pre></div></p>
 
 
 
