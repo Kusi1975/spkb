@@ -30,8 +30,7 @@ and choose **@ichicraft/generator-widgets** as generator and follow the question
 To use the MSGraphClient install following:
 
 ```powershell
-npm install @microsoft/sp-core-library@1.15.2
-npm install @microsoft/sp-webpart-base@1.15.2
+npm install @pnp/sp@^2.15.0
 ```
 
 example App.tsx
@@ -41,22 +40,20 @@ import * as React from 'react';
 
 import { WidgetContext } from '@ichicraft/widgets-widget-base';
 import styles from '../styles/widget.module.scss';
-import { UserConfiguration } from '../types';
-import { AdminConfiguration } from '../types';
-import { MSGraphClient } from '@microsoft/sp-http';
 import { Spinner } from '@fluentui/react';
+import { sp } from '@pnp/sp';
+import '@pnp/sp/webs';
+import '@pnp/sp/lists';
+import '@pnp/sp/items';
 
 export interface AppProps {
     context: WidgetContext;
-    userConfiguration: UserConfiguration;
-    adminConfiguration: AdminConfiguration;
 }
 
 export interface Item {
     id: string;
     title: string;
     description: string;
-    imageUrl: string;
 }
 
 const App: React.FunctionComponent<AppProps> = (props) => {
@@ -64,41 +61,42 @@ const App: React.FunctionComponent<AppProps> = (props) => {
     const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
     React.useEffect(() => {
-        props.context.msGraphClientFactory.getClient().then((client: MSGraphClient) => {
-            return client
-                .api(`sites('root')/lists('News')/items?$expand=fields&$orderby=fields/Sort`)
-                .version('v1.0')
-                .get((err, res) => {
-                    if (err) {
-                        console.log(err);
-                        setIsLoading(false);
-                    } else {
-                        setItems(
-                            res.value.map((t) => {
-                                return {
-                                    id: t.fields.id,
-                                    title: t.fields.Title,
-                                    description: t.fields.Description,
-                                    imageUrl: t.fields.ImageUrl,
-                                };
-                            })
-                        );
-                        setIsLoading(false);
-                    }
-                });
-        });
+        sp.web.lists
+            .getByTitle('News')
+            .items.select('Title', 'ID', 'Description')
+            .get()
+            .then((items) => {
+                setItems(
+                    items.map((item) => {
+                        return {
+                            id: item.ID,
+                            title: item.Title,
+                            description: item.Description,
+                        };
+                    })
+                );
+                setIsLoading(false);
+            })
+            .catch((err) => {
+                alert(err);
+                setIsLoading(false);
+            });
     }, [props.context.msGraphClientFactory]);
 
     return (
         <div className={styles.root}>
             {isLoading ? (
-                <Spinner label='Loading items...' />
+                <Spinner label='Am laden...' />
             ) : (
                 <div>
                     {items.map((i) => (
                         <div key={i.id}>
-                            <h1>{i.title}</h1>
-                            <div>{i.description}</div>
+                            <div>
+                                <div>{i.title}</div>
+                                <div>
+                                    <div dangerouslySetInnerHTML={{ __html: i.description }} />
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
