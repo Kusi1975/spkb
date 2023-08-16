@@ -10,9 +10,9 @@ nav:
     - PnP: M365/PnP/index.md
     - SPFx:
       - Tips: M365/SPFx/index.md
-      - ichicraft: M365/SPFx/ichicraft.md
       - Word Add-In: M365/SPFx/wordaddin.md
     - PowerShell: M365/PowerShell/index.md
+    - ichicraft: M365/ichicraft/index.md
   - OnPrem: 
     - SharePoint: onPrem/SP/index.md
     - PnP: onPrem/PnP/index.md
