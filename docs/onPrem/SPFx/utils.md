@@ -1,5 +1,31 @@
 # Kusi's Knowledge Base
 
+## Scss
+
+### Global css
+```scss
+:global(...) {
+
+}
+```
+
+### Variables
+
+In tsx file
+
+```html
+<div style={{'mycolor':'...'}}></div>
+```
+
+In scss file
+
+```scss
+color(--mycolor) {
+  ...
+}
+```
+
+
 ## Convert Base64 to File
 
 ```typescript
