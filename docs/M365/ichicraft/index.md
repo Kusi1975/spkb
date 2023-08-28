@@ -6,7 +6,7 @@
 
 Install Visual Studio Code
 
-Install latest Node.js with npm
+Install latest possible Node.js with npm (at now 16.20.0)
 
 Call in PowerShell
 
