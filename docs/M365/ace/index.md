@@ -38,7 +38,7 @@ Call in PowerShell
 ```powershell
 yo
 ```
-and choose **@microsoft/sharepoint** as generator. Use **Adaptive Card Extension** and **Generic Card Template** and follow the questions.
+and choose **\@microsoft/sharepoint** as generator. Use **Adaptive Card Extension** and **Generic Card Template** and follow the questions.
 
 Replace in **config/serve.json** the **[tenantDomain]** with your Tenant Url.
 
