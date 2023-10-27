@@ -2,11 +2,17 @@
 
 ## ichicraft
 
+### Versions used
+
+![NodeJS](https://img.shields.io/badge/NodeJS-16.20.0-green.svg)
+
 ### Prepare dev environment
 
 Install Visual Studio Code
 
 Install latest possible Node.js with npm (at now 16.20.0)
+
+you can use [NVM](../SPFx/index.md) to use different NodeJS Versions.
 
 Call in PowerShell
 

@@ -2,6 +2,42 @@
 
 ## M365 SPFx
 
+[M365 Community](https://aka.ms/community/home)
+
+[SPFx Community Call](https://aka.ms/spfx-call)
+
+[SPFx WebParts Sample Gallery](https://aka.ms/spfx-webparts)
+
+[SPFx Extensions Sample Gallery](https://aka.ms/spfx-extensions)
+
+[SPFx for Teams Sample Gallery](https://aka.ms/teams-samples)
+
+[Teams Extensions Sample Gallery](https://aka.ms/teams-extensions)
+
+### NVM
+
+In the M365 World the NodeJS version change ofen than in onPrem. To use more than one NodeJS Version you can use NVM.
+
+Before you Install uninstall all local installed NodeJS Versions.
+
+Download and Install the Setup from [Github](https://github.com/coreybutler/nvm-windows/releases).
+
+To use NVM start PowerShell as Administrator.
+
+```powershell
+# Return current used NodeJS
+nvm current
+
+# Return all installed NodeJS
+nvm list
+
+# Return all available NodeJS
+nvm list available
+
+# Switch NodeJS
+nvm use xx.xx.xx
+```
+
 ### Show all Theme colors
 
 ```javascript

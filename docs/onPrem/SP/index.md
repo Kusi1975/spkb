@@ -142,4 +142,3 @@ Set-SPLogLevel -TraceSeverity None
 
 Merge-SPLogFile -StartTime $start -EndTime $end -Correlation <ID> -Path "c:\temp\mergedLogFile.log" -Overwrite
 ```
-

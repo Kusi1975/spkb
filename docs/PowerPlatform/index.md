@@ -2,6 +2,10 @@
 
 ## PowerPlatform
 
+[PowerPlatform Community Call](https://www.youtube.com/watch?v=Q0JYCIEU43s&list=PLR9nK3mnD-OVHNx67Q2Uxe7wodTnjHguz)
+
+[PowerPlatform Sample Gallery](https://aka.ms/powerplatform-samples)
+
 ### Permission for Dataverse tables in a Solution
 
 Navigate to [PowerPlatform Admin Center](https://admin.powerplatform.microsoft.com/environments)
