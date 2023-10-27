@@ -127,3 +127,19 @@ static void Main(string[] args)
     args[0] // returns myhandler:paramater
 }
 ```
+### Merge ULS Log
+
+Merge the Log files from ULS Log from each Server in a time range to one file.
+
+```powershell
+Set-SPLogLevel -TraceSeverity Verbose
+$start = get-date
+ 
+# Make Test
+ 
+$end = Get-Date
+Set-SPLogLevel -TraceSeverity None
+
+Merge-SPLogFile -StartTime $start -EndTime $end -Correlation <ID> -Path "c:\temp\mergedLogFile.log" -Overwrite
+```
+
