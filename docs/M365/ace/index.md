@@ -210,14 +210,29 @@ To Design your individual Card you can use the [Adaptive Cards Designer](https:/
       "separator": true,
       "items": [
         {
-            "type": "TextBlock",
-            // Property name of a item element
-            "text": "${Title}"
-        },{
-            "type": "TextBlock",
-            // Within a Container you can access the root properties like
-            "text": "${$root.toptitle}"
-        },
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  // Property name of a item element
+                  "text": "${Title}"
+                },{
+                    "type": "TextBlock",
+                    // Within a Container you can access the root properties like
+                    "text": "${$root.toptitle}"
+                }
+              ]
+            }
+          ],
+          // click event for this section
+          "selectAction": {
+              "type": "Action.OpenUrl",
+              "url": "http://..."
+          }
+        }
       ]
     }
     // End Loop
