@@ -13,6 +13,10 @@
       
       
       
+        <link rel="prev" href="../ichicraft/">
+      
+      
+        <link rel="next" href="../../onPrem/SP/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Kusi's Knowledge Base - Kusi's Knowledgebase</title>
+        <title>Adaptive Cards - Kusi's Knowledgebase</title>
       
     
     
@@ -106,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Kusi's Knowledge Base
+              Adaptive Cards
             
           </span>
         </div>
@@ -213,10 +217,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../PnP/" class="md-tabs__link">
           
   
@@ -439,6 +445,8 @@
       
   
   
+    
+  
   
     
     
@@ -448,12 +456,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -467,7 +475,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             M365
@@ -613,6 +621,168 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Adaptive Cards
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Adaptive Cards
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adaptive-cards-with-spfx" class="md-nav__link">
+    Adaptive Cards with SPFx
+  </a>
+  
+    <nav class="md-nav" aria-label="Adaptive Cards with SPFx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-used" class="md-nav__link">
+    Versions used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-dev-environment" class="md-nav__link">
+    Prepare dev environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-project" class="md-nav__link">
+    Create a new project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-image-card-view" class="md-nav__link">
+    Use Image Card View
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Image Card View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cardviewcardviewsts" class="md-nav__link">
+    cardView\CardViews.ts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-data-from-a-sharepoint-list" class="md-nav__link">
+    Get Data from a SharePoint List
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Data from a SharePoint List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ilistitemts" class="md-nav__link">
+    IListItem.ts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptivecardextensionts" class="md-nav__link">
+    [...]AdaptiveCardExtension.ts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quickviewquickviewts" class="md-nav__link">
+    quickView\QuickView.ts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quickviewtemplatequickvviewtemplatejson" class="md-nav__link">
+    quickView\template\QuickvViewTemplate.json
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-widget" class="md-nav__link">
+    Debug widget
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1312,8 +1482,90 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dev-environment" class="md-nav__link">
-    Dev Environment
+  <a href="#versions-used" class="md-nav__link">
+    Versions used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-dev-environment" class="md-nav__link">
+    Prepare dev environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-project" class="md-nav__link">
+    Create a new project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-image-card-view" class="md-nav__link">
+    Use Image Card View
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Image Card View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cardviewcardviewsts" class="md-nav__link">
+    cardView\CardViews.ts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-data-from-a-sharepoint-list" class="md-nav__link">
+    Get Data from a SharePoint List
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Data from a SharePoint List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ilistitemts" class="md-nav__link">
+    IListItem.ts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptivecardextensionts" class="md-nav__link">
+    [...]AdaptiveCardExtension.ts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quickviewquickviewts" class="md-nav__link">
+    quickView\QuickView.ts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quickviewtemplatequickvviewtemplatejson" class="md-nav__link">
+    quickView\template\QuickvViewTemplate.json
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-widget" class="md-nav__link">
+    Debug widget
   </a>
   
 </li>
@@ -1343,8 +1595,214 @@
 
 <h1 id="kusis-knowledge-base">Kusi's Knowledge Base<a class="headerlink" href="#kusis-knowledge-base" title="Permanent link">&para;</a></h1>
 <h2 id="adaptive-cards-with-spfx">Adaptive Cards with SPFx<a class="headerlink" href="#adaptive-cards-with-spfx" title="Permanent link">&para;</a></h2>
-<h3 id="dev-environment">Dev Environment<a class="headerlink" href="#dev-environment" title="Permanent link">&para;</a></h3>
-<p>Installation</p>
+<p><a href="https://www.youtube.com/playlist?list=PLR9nK3mnD-OXdcwfcHGsGr78nHWLRsv1x">Viva Connections &amp; SPFx Community calls</a></p>
+<p><a href="https://aka.ms/spfx-aces">Adaptive Cards Sample Gallery</a></p>
+<p><a href="https://aka.ms/viva/vscode">Viva Connection Toolkit for Visual Studio Code</a></p>
+<h3 id="versions-used">Versions used<a class="headerlink" href="#versions-used" title="Permanent link">&para;</a></h3>
+<p><img alt="SPFx" src="https://img.shields.io/badge/SPFx-1.18.0-green.svg" /></p>
+<p><img alt="NodeJS" src="https://img.shields.io/badge/NodeJS-16.20.0-green.svg" /></p>
+<h3 id="prepare-dev-environment">Prepare dev environment<a class="headerlink" href="#prepare-dev-environment" title="Permanent link">&para;</a></h3>
+<p>Install Visual Studio Code</p>
+<p>Install latest possible Node.js with npm</p>
+<p>you can use <a href="../SPFx/">NVM</a> to use different NodeJS Versions.</p>
+<p>Call in PowerShell</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">npm</span> <span class="n">install</span> <span class="n">gulp</span> <span class="p">-</span><span class="n">-global</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">npm</span> <span class="n">install</span> <span class="n">yo</span> <span class="p">-</span><span class="n">-global</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">npm</span> <span class="n">install</span> <span class="nv">@microsoft</span><span class="p">/</span><span class="n">generator-sharepoint</span> <span class="p">-</span><span class="n">-global</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">gulp</span> <span class="n">trust-dev-cert</span>
+</code></pre></div>
+<h3 id="create-a-new-project">Create a new project<a class="headerlink" href="#create-a-new-project" title="Permanent link">&para;</a></h3>
+<p>Call in PowerShell</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">yo</span>
+</code></pre></div>
+and choose <strong><a class="magiclink magiclink-github magiclink-repository" href="https://github.com/microsoft/sharepoint" title="GitHub Repository: microsoft/sharepoint">microsoft/sharepoint</a></strong> as generator. Use <strong>Adaptive Card Extension</strong> and <strong>Generic Card Template</strong> and follow the questions.</p>
+<p>Replace in <strong>config/serve.json</strong> the <strong>[tenantDomain]</strong> with your Tenant Url.</p>
+<h3 id="use-image-card-view">Use Image Card View<a class="headerlink" href="#use-image-card-view" title="Permanent link">&para;</a></h3>
+<p>Per default it use a <strong>BaseComponentsCardView</strong> if you want change to <strong>BaseImageCardView</strong> replace following code snippets.</p>
+<h4 id="cardviewcardviewsts">cardView\CardViews.ts<a class="headerlink" href="#cardviewcardviewsts" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nx">BaseImageCardView</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nx">IImageCardParameters</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nx">ICardButton</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="p">...</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">...</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">CardView</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">BaseImageCardView</span><span class="o">&lt;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nx">I</span><span class="p">[...]</span><span class="nx">AdaptiveCardExtensionProps</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="nx">I</span><span class="p">[...]</span><span class="nx">AdaptiveCardExtensionState</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="kr">public</span><span class="w"> </span><span class="nx">get</span><span class="w"> </span><span class="nx">cardButtons</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">ICardButton</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">[</span><span class="nx">ICardButton</span><span class="p">,</span><span class="w"> </span><span class="nx">ICardButton</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">      </span><span class="p">{</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span><span class="nx">QuickViewButton</span><span class="p">,</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">          </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;QuickView&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">          </span><span class="nx">parameters</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">            </span><span class="nx">view</span><span class="o">:</span><span class="w"> </span><span class="nx">QUICK_VIEW_REGISTRY_ID</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">          </span><span class="p">}</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="p">];</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">  </span><span class="kr">public</span><span class="w"> </span><span class="nx">get</span><span class="w"> </span><span class="nx">data</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">IImageCardParameters</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">      </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span><span class="nx">Title</span><span class="p">,</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">      </span><span class="nx">iconProperty</span><span class="o">:</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../assets/....png&#39;</span><span class="p">),</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">      </span><span class="nx">primaryText</span><span class="o">:</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span><span class="nx">PrimaryText</span><span class="p">,</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">      </span><span class="nx">imageUrl</span><span class="o">:</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../assets/....png&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">  </span><span class="kr">public</span><span class="w"> </span><span class="nx">get</span><span class="w"> </span><span class="nx">onCardSelection</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">IQuickViewCardAction</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">  </span><span class="nx">IExternalLinkCardAction</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">  </span><span class="p">...</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="get-data-from-a-sharepoint-list">Get Data from a SharePoint List<a class="headerlink" href="#get-data-from-a-sharepoint-list" title="Permanent link">&para;</a></h3>
+<p>To use PnP and data-fns install following:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">npm</span> <span class="n">install</span> <span class="nv">@pnp</span><span class="p">/</span><span class="nb">sp</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">npm</span> <span class="n">instll</span> <span class="n">date-fns</span>
+</code></pre></div>
+<p>To get Data from a SharePoint List you can edit following:
+the List in this Example have following Structure:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title</td>
+<td>Singleline text</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>Picture</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Singleline text</td>
+</tr>
+<tr>
+<td>Articledate</td>
+<td>Date only</td>
+</tr>
+<tr>
+<td>Link</td>
+<td>Multiline text</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ilistitemts">IListItem.ts<a class="headerlink" href="#ilistitemts" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">export</span><span class="w"> </span><span class="kr">interface</span><span class="w"> </span><span class="nx">IListItem</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nx">Title</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nx">Image</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nx">Description</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">Articledate</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nx">Link</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="adaptivecardextensionts">[...]AdaptiveCardExtension.ts<a class="headerlink" href="#adaptivecardextensionts" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">spfi</span><span class="p">,</span><span class="w"> </span><span class="nx">SPFx</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@pnp/sp&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">import</span><span class="w"> </span><span class="s2">&quot;@pnp/sp/webs&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">import</span><span class="w"> </span><span class="s2">&quot;@pnp/sp/items&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">import</span><span class="w"> </span><span class="s2">&quot;@pnp/sp/lists&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">import</span><span class="w"> </span><span class="s2">&quot;@pnp/sp/items/get-all&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">format</span><span class="p">,</span><span class="w"> </span><span class="nx">parseISO</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;date-fns&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IListItem</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./IListItem&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">...</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">export</span><span class="w"> </span><span class="kr">interface</span><span class="w"> </span><span class="nx">INewsAdaptiveCardExtensionState</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">  </span><span class="nx">toptitle</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nx">items</span><span class="o">?:</span><span class="w"> </span><span class="nx">IListItem</span><span class="p">[];</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">}</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">...</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="kr">public</span><span class="w"> </span><span class="nx">onInit</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_fetchData</span><span class="p">();</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="p">}</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="kr">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">_fetchData</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">spfi</span><span class="p">(</span><span class="s2">&quot;https://[UrlToSharePoint]&quot;</span><span class="p">).</span><span class="nx">using</span><span class="p">(</span><span class="nx">SPFx</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">context</span><span class="p">));</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">sp</span><span class="p">.</span><span class="nx">web</span><span class="p">.</span><span class="nx">lists</span><span class="p">.</span><span class="nx">getByTitle</span><span class="p">(</span><span class="s2">&quot;[ListName]&quot;</span><span class="p">).</span><span class="nx">items</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">    </span><span class="p">.</span><span class="nx">orderBy</span><span class="p">(</span><span class="s1">&#39;Articledate&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">).</span><span class="nx">top</span><span class="p">(</span><span class="mf">5</span><span class="p">).</span><span class="nx">getAll</span><span class="p">();</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">      </span><span class="nx">items</span><span class="o">:</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">          </span><span class="nx">Title</span><span class="o">:</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">Title</span><span class="p">,</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">          </span><span class="nx">Image</span><span class="o">:</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">Image</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">Image</span><span class="p">).</span><span class="nx">serverRelativeUrl</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">          </span><span class="nx">Description</span><span class="o">:</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">Description</span><span class="p">,</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="w">          </span><span class="nx">Articledate</span><span class="o">:</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">Articledate</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">format</span><span class="p">(</span><span class="nx">parseISO</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">Articledate</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;dd.MM.yyyy&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">          </span><span class="nx">Link</span><span class="o">:</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">Link</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">IListItem</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="w">      </span><span class="p">})</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">    </span><span class="p">});</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="p">}</span>
+</code></pre></div>
+<h4 id="quickviewquickviewts">quickView\QuickView.ts<a class="headerlink" href="#quickviewquickviewts" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IListItem</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../IListItem&#39;</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">export</span><span class="w"> </span><span class="kr">interface</span><span class="w"> </span><span class="nx">IQuickViewData</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nx">items</span><span class="o">:</span><span class="w"> </span><span class="nx">IListItem</span><span class="p">[];</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="p">...</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">}</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">...</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="kr">public</span><span class="w"> </span><span class="nx">get</span><span class="w"> </span><span class="nx">data</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">IQuickViewData</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">      </span><span class="p">...</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">      </span><span class="nx">items</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">items</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">items</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p">}</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="p">...</span>
+</code></pre></div>
+<h4 id="quickviewtemplatequickvviewtemplatejson">quickView\template\QuickvViewTemplate.json<a class="headerlink" href="#quickviewtemplatequickvviewtemplatejson" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">// ...</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TextBlock&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="c1">// Property name of a root element</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">        </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${toptitle}&quot;</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="c1">// Start Loop</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Container&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">      </span><span class="c1">// data Property name of Array</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">      </span><span class="nt">&quot;$data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{items}&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">      </span><span class="nt">&quot;separator&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">      </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TextBlock&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">            </span><span class="c1">// Property name of a item element</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${Title}&quot;</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">        </span><span class="p">},{</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TextBlock&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">            </span><span class="c1">// Within a Container you can access the root properties like</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${$root.toptitle}&quot;</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">        </span><span class="p">},</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">      </span><span class="p">]</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">    </span><span class="c1">// End Loop</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="c1">// ...</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="debug-widget">Debug widget<a class="headerlink" href="#debug-widget" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">npm</span> <span class="n">gulp</span> <span class="n">serve</span>
+</code></pre></div>
 
 
 
