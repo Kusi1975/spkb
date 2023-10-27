@@ -190,6 +190,9 @@ public get data(): IQuickViewData {
 ```
 
 #### quickView\template\QuickvViewTemplate.json
+
+To Design your individual Card you can use the [Adaptive Cards Designer](https://adaptivecards.io/designer/)
+
 ```json
 {
 // ...
