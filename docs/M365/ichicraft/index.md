@@ -33,10 +33,10 @@ yo
 ```
 and choose **@ichicraft/generator-widgets** as generator and follow the questions.
 
-To use the MSGraphClient install following:
+To use the AADHttpClientFactory install following:
 
 ```powershell
-npm install @pnp/sp@^2.15.0
+npm install @pnp/sp
 ```
 
 example App.tsx
@@ -67,6 +67,10 @@ const App: React.FunctionComponent<AppProps> = (props) => {
     const [isLoading, setIsLoading] = React.useState<boolean>(true);
 
     React.useEffect(() => {
+        //current Web
+        const sp = spfi().using(SPFx(props.context.aadHttpClientFactory));
+        //another Web
+        const sp = spfi(webUrl).using(SPFx(props.context.aadHttpClientFactory));
         sp.web.lists
             .getByTitle('News')
             .items.select('Title', 'ID', 'Description')
@@ -87,7 +91,7 @@ const App: React.FunctionComponent<AppProps> = (props) => {
                 alert(err);
                 setIsLoading(false);
             });
-    }, [props.context.msGraphClientFactory]);
+    }, [props.context.aadHttpClientFactory]);
 
     return (
         <div className={styles.root}>
@@ -122,7 +126,7 @@ npm run start
 
 ### Deploy widget
 
-- Edit the scriptUrl in the manifest.config.js
+- Edit the scriptUrl in the **manifest.config.js** with the full url like **https://[siteUrl]/[DocLib]/[Folder]/bundle.js**
 
 - make packages with:
 
