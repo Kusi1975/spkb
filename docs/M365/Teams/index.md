@@ -5,6 +5,7 @@
 ### Learning
 
 [Teams Toolkit Extension](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
+
 [Teams Toolkit Fundamentals](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/teams-toolkit-fundamentals)
 
 ### Prerequisits
