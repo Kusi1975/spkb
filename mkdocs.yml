@@ -12,6 +12,7 @@ nav:
       - Tips: M365/SPFx/index.md
       - Word Add-In: M365/SPFx/wordaddin.md
     - PowerShell: M365/PowerShell/index.md
+    - Teams App: M365/Teams/index.md
     - ichicraft: M365/ichicraft/index.md
     - Adaptive Cards: M365/ace/index.md
   - OnPrem: 
