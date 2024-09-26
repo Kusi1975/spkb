@@ -31,6 +31,7 @@ nav:
     - PowerShell: onPrem/PowerShell/index.md
   - PowerPlatform: 
     - PowerPlatform: PowerPlatform/index.md
+    - PCF: PowerPlatform/PCF/index.md
     - PowerFx: PowerPlatform/PowerFx/index.md
     - Flow: PowerPlatform/Flow/index.md
     - Center of Excellence: PowerPlatform/CoE/index.md
