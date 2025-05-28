@@ -11,18 +11,25 @@
 
 ### Variables
 
-In tsx file
+In ***.tsx** file (Scope WebPart)
 
 ```html
-<div style={{'mycolor':'...'}}></div>
+<div style={{'--backgroundimage': `url('https://....png')`} as any}></div>
 ```
 
-In scss file
+In ***WebPart.ts** file (Scope Page)
 
-```scss
-color(--mycolor) {
+```typescript
+protected onInit(): Promise<void> {
+  this.domElement.style.setProperty('--backgroundimage', `url('https://....png')`);
   ...
 }
+```
+
+In ***.scss** file
+
+```css
+background-image: var(--backgroundimage);
 ```
 
 
