@@ -12,7 +12,7 @@ Install Visual Studio Code
 
 Install latest possible Node.js with npm (at now 16.20.0)
 
-you can use [NVM](../SPFx/index.md) to use different NodeJS Versions.
+you can use [fnm](../SPFx/index.md) to use different NodeJS Versions.
 
 Call in PowerShell
 

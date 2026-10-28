@@ -109,6 +109,8 @@ The package can then be uploaded to the AppCatalog under "Apps for SharePoint".
 
 The package is then available as an installable app for all site collections and can be installed using «Add app».
 
+The Scripts are copied to **https://.../sites/appcatalog/ClientSideAssets/AllItems.aspx**
+
 #### SP2016
 
 With SP2016, the JavaScript files are still outside of the package, so a DocLib must be provided where the JS files can be stored. The App Catalog site is ideally suited, under which a DocLib can be created, e.g. with the name CDN, where a subfolder can then be created for each package, for example, to which the files can then be uploaded from the path: <b>&lt;Project path&gt;/temp/deploy</b>. So that SPFx can link to the correct folder, the cdnBasePath must be defined in the <b>&lt;Project path&gt;/config/write-manifests.json</b> file, e.g. <b>/sites/appcatalog/cdn/myproject</b>. The package can be found under <b>&lt;Project path&gt;/sharepoint/solution</b>.

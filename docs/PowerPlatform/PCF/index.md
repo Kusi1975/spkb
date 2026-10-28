@@ -14,13 +14,13 @@
 
 Install [Visual Studio Code](https://code.visualstudio.com/download)
 
-Download and Install the Setup from [Github](https://github.com/coreybutler/nvm-windows/releases).
+Download and Install the Setup from [Github](https://github.com/Schniz/fnm/releases).
 
 Install the latest NodeJS
 ```powershell
-nvm list available
-nvm install 20.17.0
-nvm use 20.17.0
+fnm list available
+fnm install 20.17.0
+fnm use 20.17.0
 ```
 
 Install [PowerShell 7.x](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows)

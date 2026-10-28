@@ -12,15 +12,15 @@
 
 Install [Visual Studio Code](https://code.visualstudio.com/download)
 
-Download and Install [NVM Setup](https://github.com/coreybutler/nvm-windows/releases)
+Download and Install [fnm Setup](https://github.com/Schniz/fnm/releases)
 
 Open PowerShell as Administrator
   
 Install the latest NodeJS
 
 ```powershell
-nvm install 16.20.0
-nvm use 16.20.0
+fnm install 16.20.0
+fnm use 16.20.0
 ```
 
 Start Visual Studio Code and install Extension: **Teams Toolkit Extension**

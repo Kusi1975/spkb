@@ -14,28 +14,56 @@
 
 [Teams Extensions Sample Gallery](https://aka.ms/teams-extensions)
 
-### NVM
+### fnm
 
-In the M365 World the NodeJS version change ofen than in onPrem. To use more than one NodeJS Version you can use NVM.
+In the M365 World the NodeJS version change ofen than in onPrem. To use more than one NodeJS Version you can use fnm.
+
+In the past I used NVM. Now NVM is only being developed further for Linux.
 
 Before you Install uninstall all local installed NodeJS Versions.
 
-Download and Install the Setup from [Github](https://github.com/coreybutler/nvm-windows/releases).
+Download and Install the Setup from [Github](https://github.com/Schniz/fnm/releases).
 
-To use NVM start PowerShell as Administrator.
+For fnm it is not strictly necessary to run PowerShell as an administrator.
 
 ```powershell
 # Return current used NodeJS
-nvm current
+fnm current
 
 # Return all installed NodeJS
-nvm list
+fnm list
 
 # Return all available NodeJS
-nvm list available
+fnm list-remote
 
 # Switch NodeJS
-nvm use xx.xx.xx
+fnm use xx.xx.xx
+```
+fnm switch automatically the NodeJS Version if in the folder a file **.node-version** as a text file with only the NodeJS version.
+
+Example .node-version:
+
+```
+22.22.1
+```
+
+### PNPM
+
+NPM download each file from each packages into the node_modules folder from each project, this need much disk space. To save space you can use PNPM.
+PNPM have a central folder and store each package in this folder and create only a hard link per file.
+
+If you use fnm or NVM use for global packages NPM, then PNPM store for each NodeJS Version in the same place and override global packages.
+
+Installation from PNPM:
+
+```powershell
+npm install pnpm@12.11.2 --global
+```
+
+Use in project folder:
+
+```powershell
+pnpm install
 ```
 
 ### Show all Theme colors
@@ -120,4 +148,66 @@ In WebPart render function:
 
 ```css
 background-color: "[theme: themeLighterAlt, default: #0078d7]";
+```
+
+### Migrate from gulp to heft
+
+#### Use update command from Microsoft
+
+You can update with the update tool from Microsoft but in my case I was not so happy.
+
+```powershell
+fnm use 22.22.1
+pnpm install -g @pnp/cli-microsoft365
+m365 spfx project upgrade --toVersion 1.22.2
+```
+
+#### Use manual update with update the files
+
+The best is to create a new empty project with SPFx 1.22.2 or later and compare it, following files are changed:
+
+Delete files
+
+- gulpfile.js
+- package-lock.json
+
+Copy from new empty project (override if exists):
+
+- Config\rig.json kopieren
+- Config\typescript.json kopieren
+- Config\sass.json kopieren
+- .eslintrc.js
+- tsconfig.json
+- .gitignore
+
+Compare with the empty project and edit it:
+
+- .node-version
+
+- package.json
+  - delete main
+  - edit scripts, dependencies, devDependencies, overrides
+  - new resolutions
+
+- .yo-rc.json
+  - useGulp
+  - nodeVersion
+  - sdksVersions
+  - edit version
+
+- readme.md 
+  - edit version
+  - replace gulp with npm (heft use npm)
+  
+- config/package-solution.json
+  - mpnId
+	
+This may change, but is currently identical:
+
+- config/serve.json
+- config/config.json
+
+```powershell	
+rd .\node_modules\ -erroraction silentlycontinue
+pnpm install
 ```

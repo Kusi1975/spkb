@@ -6,15 +6,15 @@ In the past, if you wanted to build custom reusable WebParts, you had to write s
 
 ## Versions
 
-SPFx Version 1.1.0 is supplied with SharePoint Feature Pack 2 (corresponds to CU 09.17). SPFx 1.4.1 is included with SharePoint 2019/SE. SE get SPFx 1.5.1 with the March 2023 Patch. SharePoint Online currently uses 1.17.1
+SPFx Version 1.1.0 is supplied with SharePoint Feature Pack 2 (corresponds to CU 09.17). SPFx 1.4.1 is included with SharePoint 2019/SE. SharePoint Online currently uses 1.23.2
 
-||SP2016|SP2019|SPSE|SPOnline|
-|---|---|---|---|---|
-|SPFx|![version](https://img.shields.io/badge/version-1.1.0-green.svg)|![version](https://img.shields.io/badge/version-1.4.1-green.svg)|![version](https://img.shields.io/badge/version-1.5.1-green.svg)|![version](https://img.shields.io/badge/version-1.17.1-green.svg)|
-|Node.js|6.x/8.x|6.x/8.x|6.x/8.x|16.13+|
-|NPM|v3/v4|v3/v4|v3/v4|v5/v6/v7/v8|
-|TypeScript|2.2.2|2.4.2|2.4.2|3.3|
-|React|15.4.2|15.6.2|15.6.2|17.0.1|
-|Yeoman|3.x|3.x|3.x|3.x|4.x|
-|Gulp|4.x|4.x|4.x|4.x|
-|\@microsoft/generator-sharepoint|1.17.1|1.17.1|1.17.1|1.17.1|
+||SP2019 / SPSE|SPOnline|
+|---|---|---|
+|SPFx|![version](https://img.shields.io/badge/version-1.4.1-green.svg)|![version](https://img.shields.io/badge/version-1.24.0-green.svg)|
+|Node.js|8.x|22.x|
+|NPM|5.x/6.x|10.x|
+|TypeScript|2.4.2|5.8.0|
+|React|15.6.2|17.0.1|
+|Yeoman|3.1.1|7.x|
+|Toolchain|Gulp 4.0.2|Heft 1.x|
+|\@microsoft/generator-sharepoint|1.12.1|1.23.2|
